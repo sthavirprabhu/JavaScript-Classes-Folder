@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        document.write('<h1> Goal: Add "date" to the end of the fruits array. </h1>')
+        let fruits = ["apple", "banana", "cherry"];
+        fruits.push("date")
+        document.write(fruits + '<br>')
+
+        document.write('<h1> Goal: Remove the last element from the numbers array. </h1>')
+        let numbers = [1, 2, 3, 4, 5];
+        numbers.pop()
+        document.write(numbers + '<br>')
+
+        document.write('<h1> Goal: Add "red" to the beginning of the colors array. </h1>')
+        let colors = ["blue", "green", "yellow"];
+        colors.unshift("red")
+        document.write(colors + '<br>')
+
+        document.write('<h1> Goal: Remove the first element from the items array. </h1>')
+        let items = ["book", "pen", "ruler", "eraser"];
+        items.shift()
+        document.write(items + '<br>')
+
+        document.write('<h1> Goal: Remove 1 element starting at index 2, and insert "x" and "y" in its place. </h1>')
+        let letters = ["a", "b", "c", "d", "e"];
+        letters.splice(2, 1, "x", "y")
+        document.write(letters + '<br>')
+
+        document.write('<h1> Goal: Create a new array subValues containing elements from index 1 up to (but not including) index 4 of the values array. What is the content of subValues? What is the content of values after this operation? </h1>')
+        let values = [10, 20, 30, 40, 50];
+        let subValues = values.slice(1, 4)
+        document.write(subValues + '<br>')
+        document.write(values + '<br>')
+
+        document.write('<h1> Goal: Add "first" to the initially empty emptyArray </h1>')
+        let emptyArray = new Array();
+        emptyArray.push("first")
+        document.write(emptyArray + '<br>')
+
+        document.write('<h1> Goal: Add "start" to the beginning of the sizedArray (which was created with a specific size). What is the content of sizedArray after this operation? (Note: Arrays created with new Array(size) are initially filled with undefined values.) </h1>')
+        let sizedArray = new Array(3);
+        sizedArray.unshift("start")
+        document.write(sizedArray + '<br>')
+
+        document.write('<h1> Goal: Insert the value 150 at index 1 in the data array without deleting any elements. </h1>')
+        let data = [100, 200, 300, 400];
+        data.splice(1, 0, 150)
+        document.write(data + '<br>')
+
+        document.write('<h1> Goal: Remove two elements from the names array starting at index 2. </h1>')
+        let names = ["Alice", "Bob", "Charlie", "David"];
+        names.splice(2, 2)
+        document.write(names + '<br>')
+
+        document.write('<h1> Goal: Create a new array lastTwo containing the last two elements of numbers2 using a negative index in slice. What is the content of lastTwo? What is the content of numbers2? </h1>')
+        let numbers2 = [5, 10, 15, 20, 25];
+        let lastTwo = numbers2.slice(-2)
+        document.write(lastTwo + '<br>')
+        document.write(numbers2 + '<br>')
+
+        document.write('<h1> Goal: Remove the first and last elements from the mixed array. </h1>')
+        let mixed = [1, "hello", true, 2.5];
+        document.write(mixed + '<br>')
+        mixed.splice(0, 1)
+        document.write(mixed + '<br>')
+        mixed.splice(-1, 1)
+        document.write(mixed + '<br>')
+
+        document.write('<h1> Goal: Add "purple" to the end and "orange" to the beginning of the colors2 array. </h1>')
+        let colors2 = ["red", "green", "blue"];
+        document.write(colors2 + '<br>')
+        colors2.push("purple")
+        document.write(colors2 + '<br>')
+        colors2.unshift("orange")
+        document.write(colors2 + '<br>')
+
+        document.write('<h1> Goal: Remove all elements from index 3 to the end of the values2 array. </h1>')
+        let values2 = [1, 2, 3, 4, 5, 6];
+        document.write(values2 + '<br>')
+        values2.splice(3)
+        document.write(values2 + '<br>')
+
+        document.write('<h1> Goal: Create a new array middle containing a portion of letters2 from index 2 up to one element from the end (using a negative index). What is the content of middle? What is the content of letters2? </h1>')
+        let letters2 = ["p", "q", "r", "s", "t", "u"];
+        let middle = letters2.slice(2, -1)
+        document.write(middle + '<br>')
+        document.write(letters2 + '<br>')
+
+    </script>
+</body>
+</html>

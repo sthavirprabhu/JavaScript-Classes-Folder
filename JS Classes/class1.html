@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="a"></h1>
+    <p id="b"></p>
+    <p id="c"></p>
+    <p id="d"></p>
+    <p id="e"></p>
+    <script>
+        document.write('Hello World' + '<br>')
+        document.write('Hello World' + '<br>' + '<br>')
+        // Uses HTML ID to call and display any message
+        document.getElementById('a').innerHTML='Introduction To JavaScript'
+        document.getElementById('c').innerHTML='My first paragraph'
+        // declaring a variable
+        var num1 = 2
+        let num2 = 3
+        var sum= num1+num2
+        document.getElementById('b').innerHTML=sum
+        var x,y,z
+        x=10
+        y=13
+        z=15
+        z=x+y
+        document.write('Addition of 2 Numbers = ', z + '<br>'+ '<br>')
+        let firstName='Sthavir'
+        let lastName='Prabhu'
+        document.write('My name is ' + firstName + " " + lastName + '<br>')
+        // user input
+        var userName = prompt('Enter Your Name')
+        console.log('Hello, ' + userName)
+        document.getElementById('d').innerHTML='Hello, ' + userName
+        // asking users for 2 numbers
+        var number1 = parseFloat(prompt('Enter Number 1'))
+        var number2 = parseFloat(prompt('Enter Number 2'))
+        // increment operator (increases value by 1)
+        number2++
+        console.log(typeof(number2))
+        var sum2 = number1+number2
+        document.getElementById('e').innerHTML='The sum is ' + sum2
+        // store boolean data type
+        let booleanDataType = null
+        document.write(typeof(booleanDataType))
+    </script>
+</body>
+</html>

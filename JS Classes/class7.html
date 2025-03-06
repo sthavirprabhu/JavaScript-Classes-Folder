@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        document.write('<h1> Array </h1>')
+        document.write('<p> Arrays are used to store multiple values in a single variable. Arrays are created using the array initializer / literal syntax. </p>')
+
+        var a = [1, 2, 3, 4, 5] // Method 1 (Creating an Array using a Square Bracket)
+        document.write(a + '<br>')
+        var b = new Array(1, 2, 3, 4, 5, a) // Method 2 (Creating an Array using the Array Constructor)
+        document.write(b + '<br>')
+        var c = new Array(5) // Method 3 (Creating an Array with a Length of 5)
+        document.write(c + '<br>')
+
+        document.write('<h1> Operations on Array </h1>')
+        document.write(a.length + '<br>' + b.length + '<br>' + c.length) // Length of an Array
+
+        document.write('<p> Accessing Array Elements </p>' + '<br>')
+        document.write(a[0] + '<br>' + b[5][2] + '<br>') // Accessing Array Elements
+
+        document.write('<p> Modifying Array Elements </p>')
+        a[3] = 7
+        document.write(a)
+
+        document.write('<h1> Common Array Methods </h1>')
+        document.write('<h3> Adding and Removing Elements </h3>')
+        document.write('<p> Push Method </p>')
+        a.push(6) // Adds an Element to the End of the Array
+        document.write(a + '<br>')
+        document.write('<p> Pop Method </p>')
+        a.pop() // Removes the Last Element of the Array
+        document.write(a + '<br>')
+
+        document.write('<p> Unshift Method </p>')
+        a.unshift(2, 3) // Adds an Element to the Beginning of the Array
+        document.write(a + '<br>')
+
+        document.write('<p> Shift Method </p>')
+        a.shift() // Removes the First Element of the Array
+        document.write(a + '<br>')
+
+        document.write('<h1> Splice Method </h1>')
+        document.write('<p> Splice Method is used to Add or Remove Elements from an Array </p>')
+        document.write('<p> Syntax: array.splice(index, howmany, item1, ....., itemX) </p>')
+        document.write(a + '<br>')
+        a.splice(1, 3) // Starting from Index 1, Remove till 3 Elements
+        document.write(a + '<br>')
+        a.splice(1, 0, "a", "b", "c")
+        document.write(a + '<br>')
+        a.splice(0, 3, "x", "y")
+        document.write(a + '<br><br>')
+        // Syntax: splice(startIndex, deleteCount, item1, ite2, ...)
+        // Syntax: Remove Elements - splice(startIndex, deleteCount)
+        // Syntax: Add Elements - splice(startIndex, 0, item1, item2, ...)
+        // Syntax: Replace Elements - splice(startIndex, deleteCount, item1, item2, ...)
+
+        let myArray = [1, 2, 3, 4, 5]
+        document.write(myArray + '<br>')
+        // Remove 2 Elements starting at Index 1
+        myArray.splice(1, 2)
+        document.write(myArray + '<br>')
+        // Insert "a" and "b" at Index 2
+        myArray.splice(2, 0, "a", "b")
+        document.write(myArray + '<br>')
+        // Replace 1 Element at Index 0 with "x" and "y"
+        myArray.splice(0, 1, "x", "y")
+        document.write(myArray + '<br>')
+        
+        document.write('<h1> Creating a Copy of an Array </h1>')
+        // Syntax: slice(startIndex, endIndex)
+        let myArray1 = [1, 2, 3, 4, 5]
+        document.write(myArray1 + '<br>')
+        let myArrayCopy = myArray1.slice(1, 3) // Stop index is excluded from the count
+        document.write(myArrayCopy + '<br>')
+        let myArrayCopy1 = myArray1.slice(1) // Starts from the Index given till the end
+        document.write(myArrayCopy1 + '<br>')
+        let myArrayCopy2 = myArray1.slice(1, -1) // Delete the first and last elements
+        document.write(myArrayCopy2 + '<br>')
+
+    </script>
+</body>
+</html>

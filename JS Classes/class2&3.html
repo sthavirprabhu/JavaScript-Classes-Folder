@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class 2</title>
+</head>
+<body>
+    <h1> Operators: </h1>
+    <h1> Arithmatic Operators</h1>
+    <script>
+        // Arithmetic Operatives
+        var x = 10
+        var y = 20
+        document.write('Adition ' + (x+y) + '<br>')
+        document.write('Subtraction ' + (x-y) + '<br>')
+        document.write('Multiplication ' + (x*y) + '<br>')
+        document.write('Division ' + (x/y) + '<br>')
+        document.write('Modulus ' + (x%y) + '<br>')
+        document.write('Exponent ' + (6**3) + '<br>')
+        document.write('<h1> Assignment Operators </h1>')
+        // Assignment Operators (=, +=, -=, *=, /=, %=)
+
+        var a = 2
+        document.write('Assignment Operator ' + a + '<br>')
+        document.write('Add and Assign ' + (a=a+5) + '<br>')
+        document.write('Subtraction and Assign ' + (a-=5) + '<br>')
+        document.write('Multiply and Assign ' + (a*=5) + '<br>')
+        document.write('Divide and Assign ' + (a/=5) + '<br>')
+        document.write('Modulus and Assign ' + (a%=5) + '<br>')
+        document.write('Exponent and Assign ' + (a**=5) + '<br>')
+        document.write('Left-Shift and Assign ' + (a<<=1) + '<br>')
+        document.write('Right-Shift and Assign ' + (a>>=1) + '<br>')
+        document.write('Bitwise and and Assign ' + (a&=1) + '<br>')
+        document.write('Bitwise or and Assign ' + (a|=1) + '<br>')
+        document.write('Bitwise XOR and Assign ' + (a^=1) + '<br>')
+
+        // Note: Not more that 3 operators can be used in a single line
+        document.write('<h1> Comparison Operators </h1>')
+        document.write('Equals to ' + (10=='10') + '<br>') // true
+        document.write('Equals to ' + (10=='5') + '<br>') // false
+        document.write('Stict Equals to ' + (10==='10') + '<br>') // false, checks data type aswell as value
+        document.write('Stict Equals to ' + (10===10) + '<br>') // true, checks data type aswell as value
+        document.write('Not Equals to ' + (10!=='10') + '<br>') // false, does the opposite of equals to
+        document.write('Not Equals to ' + (10!='5') + '<br>') // true, does the opposite of equals to
+        document.write('Greater than ' + (10>5) + '<br>') // true
+        document.write('Less than ' + (10<5) + '<br>') // false
+        document.write('Greater than or Equals to ' + (10>=5) + '<br>') // true
+        document.write('Less than or Equals to ' + (10<=10) + '<br>') // false
+    
+        // Logical Operators
+        document.write('<h1> Logical Operators </h1>')
+        document.write('AND Operator ', false && true, '<br>') // false
+        document.write('OR Operator ', false || true, '<br>') // true
+        document.write('NOT Operator ', !false, '<br>') // true
+        
+        // Bitwise Operators
+        document.write('<h1> Bitwise Operators </h1>')
+        document.write('Bitwise AND ', 5&3, '<br>') // 0 and 1 = 0, 1 and 0 = 0, 1 and 1 = 1, 0 and 0 = 0
+        document.write('Bitwise OR ', 5|3,  '<br>') // 1 and 1 = 1, 1 and 0 = 1, 0 and 1 = 1, 0 and 0 = 0
+        document.write('Bitwise XOR ', 5^3,  '<br>') // 1 and 1 = 0, 1 and 0 = 1, 0 and 1 = 1, 0 and 0 = 0
+        document.write('Bitwise NOT ', ~5, '<br>') // -6 (When result is negative, then reverse the number to the original number and perform 2s complement)
+        document.write('Left Shift ', 5<<3 , '<br>') // 5*2^3 = 5*8 = 40
+        document.write('Right Shift ', 5>>3, '<br>') // 5/2^3 = 5/8 = 0
+        document.write('Unsigned Right Shift ', -5>>>3, '<br>') // 5/2^3 = 5/8 = 0
+        
+        // Unary Operators
+        document.write('<h1> Unary Operators </h1>')
+        var x = +'10'
+        document.write('Unary Plus ', x, '<br>')
+        document.write('X is a ', typeof(x), '<br>')
+        var y = -'10'
+        document.write('Unary Minus ', y, '<br>')
+        document.write('Y is a ', typeof(y), '<br>')
+        var increment = 10
+        increment++
+        document.write('Increment Operator ', increment, '<br>')
+        increment--
+        document.write('Decrement Operator ', increment, '<br>')
+        document.write('Type of Increment = ', typeof increment, '<br>')
+        var b = void(210) // Whatever one writes, it will always return undefined
+        document.write('Void Operator = ', b, '<br>')
+
+        // Ternary Operator
+        var age = 18
+        var canVote = (age>=18) ? 'Yes' : 'No'
+        document.write('Can Vote = ', canVote, '<br>')
+
+        // Comma Operator
+        var a = (2,3,4,5,6)
+        document.write('Comma Operator = ', a, '<br>') // Breaks down the list and retuns the last value
+        let d = (x=5, y=20, x+y)
+        document.write('Comma Operator = ', d, '<br>') // Breaks down the list and retuns the last value
+    
+        // Spread and Rest Operator
+        let arr = [1,2,3,4,5]
+        let arr2 = [...arr, 6,7,8,9,10]
+        document.write('Spread Operator = ', arr2, '<br>')
+        function sum(...args){
+            let sum = 0
+            for (let i of args){
+                sum+=i
+            }
+            return sum
+        }
+        document.write(sum(1,2,10), '<br>')
+
+        // Nullish Coalescing Operator
+        document.write('<h1> Nullish Coalescing Operator </h1>')
+        var value = 0 // null and undefined are returned as default value
+        var result = value??'Default Value (Any Value)'
+        document.write(result + '<br>')
+        var value1 = 1 // 0, null and undefined are returned as default value
+        var result1 = value1||'Default Value (Any Value)'
+        document.write(result1)
+    </script>
+</body>
+</html>

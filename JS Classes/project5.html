@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        document.write('<h1> Create an Object: Define an object called car with properties make, model, year, and color. Then, print the object to the console. </h1>')
+        class Car1 {
+            constructor(make, model, year, color){
+                this.make = make
+                this.model = model
+                this.year = year
+                this.color = color
+            }
+        }
+        let car = new Car1("Honda", "CRV", 2013, "Grey")
+        document.write(JSON.stringify(car) + '<br>')
+
+        document.write('<h1> Access Object Properties: Given the object person = { name: "Alice", age: 30, city: "Wonderland" }, write code to access and print the name and city properties. </h1>')
+        class Person {
+            constructor(name, age, city){
+                this.name = name
+                this.age = age
+                this.city = city
+            }
+        }
+        let person1 = new Person("Alice", 30, "Wonderland")
+        document.write(person1.name + '<br>' + person1.city + '<br>')
+
+        document.write('<h1> Add a New Property: Starting with the car object defined above, add a property called mileage and set it to a value of your choice. Print the updated object. </h1>')
+        car.milage = 212000
+        document.write(car.milage + '<br>')
+
+        document.write('<h1> Update a Property: Modify the age property of the person object from question 2 to a new value. Print the updated object. </h1>')
+        person1.age = 31
+        document.write(person1.age + '<br>')
+
+        document.write('<h1> Delete a Property: Using the person object from question 2, delete the city property and print the result. </h1>')
+        delete person1.city
+        document.write(person1.city + '<br>')
+
+        document.write('<h1> Check if Property Exists: Write a code segment that checks if the property age exists in the person object using the in operator and also using hasOwnProperty(). Log the results. </h1>')
+        document.write(person1.hasOwnProperty('age') + '<br>')
+        // document.write('age' in person1 + '<br>')
+
+        document.write('<h1> Iterate Over Properties: Write a loop that iterates over the car object’s properties and prints each key-value pair to the console. </h1>')
+        for (const key in car) {
+            if (Object.hasOwnProperty.call(car, key)) {
+                const element = car[key];
+                document.write(key + ': ' + element + '<br>')
+            }
+        }
+
+        document.write("<h1> Merge Two Objects: Create another object called owner with properties name and age. Merge this object with the car object, resulting in a new object that contains all the properties from both. Print the merged object. </h1>")
+        class Owner {
+            constructor(name, age){
+                this.name = name
+                this.age = age
+            }
+        }
+        let owner = new Owner("Sthavir", 14)
+        let merged = {...car, ...owner}
+        document.write(JSON.stringify(merged) + '<br>')
+
+        document.write("<h1> Using Object.entries(): Use the car object to create an array of its key-value pairs using Object.entries(). Print the resulting array. </h1>")
+        document.write(Object.entries(car) + '<br>')
+
+        document.write("<h1> Count Properties: Write a function that takes an object as an argument and returns the number of properties it has. Test the function with the person object. </h1>")
+        document.write(Object.keys(person1).length + '<br>')
+        document.write(Object.values(person1).length + '<br>')
+
+        document.write("<h1> Define a Method: Add a method called getDetails to the car object that returns a string describing the car using its properties. Call this method and print the output. </h1>")
+        car.getDetails = function(){
+            return `The car is a ${this.make} ${this.model} from ${this.year} and is in ${this.color}`
+        }
+
+        document.write("<h1> Deep Property Access: Create an object student with properties name, grade, and subjects (which is another object containing subjects and their scores). Write code to access and print the score of a specific subject. </h1>")
+        let student = {
+            name: "Sthavir",
+            grade: 9,
+            subjects: {
+                math: 98,
+                science: 99,
+                english: 94
+            }
+        }
+        document.write(student.subjects.science + '<br>')
+
+        document.write("<h1> Convert Object to JSON: Given the person object from question 2, convert it to a JSON string using JSON.stringify(). Print the JSON string to the console. </h1>")
+        document.write(JSON.stringify(person1) + '<br>')
+
+        document.write("Bonus: Create an object representing a book with properties title, author, yearPublished, and genre. Write a function called getBookInfo that takes the book object as an argument and uses object destructuring to extract the properties. If genre is not provided, default it to 'Unknown'. The function should return a string summarizing the book's information. </h1>")
+        class Book {
+            constructor (title, author, yearPublished, genre){
+                this.title = title
+                this.author = author
+                this.yearPublished = yearPublished
+                this.genre = genre
+            }
+        }
+        let getBookInfo = function (callback){
+            let {title, author, yearPublished, genre = "Unknown"} = callback
+            return `The title of this book is ${this.title} and the author is ${this.author}. It was published in ${this.yearPublished} and it is classified in the genre of ${this.genre}.`
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        document.write('<h1> Objects </h1>')
+        document.write('<p> Objects are used to store collections of data and more complex entities. Objects can be created using the Object() constructor or the object initializer / literal syntax. </p>')
+        // Syntax: var a = {key1: value1, key2: value2} or let a = new Object()
+        var person = {
+            name: "Sthavir",
+            age: 14,
+            grade: 8,
+            school: "TMS",
+        }
+        document.write(`${person.name} is ${person.age} years old and is in grade ${person.grade} at ${person.school} <br>`)
+        // Creating Object using Object Constructor
+        let person1 = new Object()
+        person1.name = "Sthavir"
+        person1.age = 14
+        person1.grade = 8
+        person1.school = "TMS"
+        document.write(`${person1.name} is ${person1.age} years old and is in grade ${person1.grade} at ${person1.school} <br>`)
+        // Constructor Function
+        function Person(name, age, grade, school) {
+            this.name = name
+            this.age = age
+            this.grade = grade
+            this.school = school
+        }
+        let john = new Person("John", 14, 8, "TMS")
+        document.write(`${john.name} is ${john.age} years old and is in grade ${john.grade} at ${john.school} <br>`)
+        // Using ES6 Class Syntax
+        class Person1 {
+            constructor(name, age, grade, school){
+                this.name = name
+                this.age = age
+                this.grade = grade
+                this.school = school
+            }
+        }
+        let person2 = new Person1("Sthavire", 15, 9, "TMS")
+        document.write(`${person2.name} is ${person2.age} years old and is in grade ${person2.grade} at ${person2.school} <br>`)
+        // Using Object.create() method
+        let person3 = Object.create(person2)
+        document.write(`${person3.name} is ${person3.age} years old and is in grade ${person3.grade} at ${person3.school} <br>`)
+        // Operations on Objects
+        document.write('<h1> Operations on Objects </h1>')
+        document.write('<p> Accessing Object Properties </p>' + '<br>')
+        document.write(person2.name + '<br>' + person3['age']) // Accessing Objects can be doen in 2 ways using "." operator and "[]" operator
+        document.write('<p> Adding Object Properties </p>' + '<br>')
+        person.city = "Dubai"
+        person.age += 1
+        person["school"] = "NMS"
+        person["color"] = 'Blue'
+        document.write(person.city + '<br>' + person.age + '<br>')
+        document.write(JSON.stringify(person));
+        document.write('<p> Deleting Object Properties </p>' + '<br>');
+        delete person.city;
+        delete person.color;
+        document.write(JSON.stringify(person));
+        document.write('<p> Checking for Property </p>' + '<br>');
+        document.write(person.hasOwnProperty('color') + '<br>'); // Checks is a key is extant
+        // console.log('name' in person + '<br>') // Checks if a key is present in the object
+        document.write('<p> Looping/Iterating through Object Properties </p>' + '<br>');
+        for (let key in person) {
+            document.write(key+ ": " + person[key] + '<br><br>')
+        }
+        Object.keys(person).forEach(callback => {
+            document.write(callback + person[callback] + '<br><br>')
+        })
+        document.write(Object.keys(person) + '<br>') // Returns an array of keys
+        document.write(Object.values(person) + '<br>') // Returns an array of values
+        document.write(Object.entries(person) + '<br>') // Returns an array of key-value pairs
+        document.write('<p> Merging Objects </p>' + '<br>');
+        let a = {name: "Sthavir", age: 14}
+        let b = {age: 8, school: "TMS"}
+        let c = {...a, ...b} // Merging using spread operator
+        document.write(JSON.stringify(c) + '<br>')
+        var d = Object.assign(b, a) // Merging using Object.assign() method
+        document.write(JSON.stringify(d) + '<br>')
+
+        document.write('<p> Cloning Objects </p>' + '<br>');
+        let clone1 = Object.assign(person)
+        document.write(JSON.stringify(clone1) + '<br>')
+        let clone2 = {...person}
+        document.write(JSON.stringify(clone2) + '<br>')
+        
+        document.write('<p> Freezing Objects </p>' + '<br>');
+        var frozen = Object.freeze({age:15})
+        document.write(JSON.stringify(frozen) + '<br>')
+        frozen.age = 16
+        document.write(frozen.age + '<br>')
+        var F1 = Object.freeze(person)
+        F1.age = 12
+        document.write(F1.age + '<br>')
+        document.write('<p> Sealing Objects </p>' + '<br>');
+        let S1 = Object.seal({name: "Sthavir", age: 14})
+        document.write(JSON.stringify(S1) + '<br>')
+        S1.gender = "Male"
+        S1.age = 15
+        delete S1.age
+        document.write(JSON.stringify(S1) + '<br>')
+        document.write('<p> Property Descriptors </p>' + '<br>');
+        let variable = Object.defineProperty(b, 'age', {value: 14, writable: false, enumerable: true})
+        document.write(variable.age + '<br>')
+
+        document.write('<p> Nested Objects and Accessing Deep Property </p>' + '<br>');
+        const student = {
+            name: 'Sthavir',
+            age: 14,
+            subjects: {
+                math: 98,
+                science: 99,
+                english: 94
+            }
+        }
+        document.write(student.subjects.math + '<br>')
+        document.write(student['subjects']['math'] + '<br>')
+        
+        document.write('<p> Using Object.fromEntries </p>' + '<br>');
+        const entries = [['name', 'Alice'], ['age', 25]];
+        document.write(entries + '<br>')
+        const object = Object.fromEntries(entries);
+        document.write(JSON.stringify(object) + '<br>')
+        
+    </script>
+</body>
+</html>

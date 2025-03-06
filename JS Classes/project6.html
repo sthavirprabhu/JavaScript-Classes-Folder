@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        document.write('<h1> Clone an Object: How do you create a shallow clone of an object using Object.assign()? Provide an example. </h1>')
+        let car = {
+            make: "Honda",
+            model: "CRV",
+            year: 2013,
+            color: "Grey"
+        }
+        let clone1 = Object.assign({}, car)
+        document.write(JSON.stringify(clone1) + '<br>')
+
+        document.write('<h1> Deep Cloning: What is the purpose of JSON.stringify() and JSON.parse() when deep cloning an object? What types of data can cause issues in this method? </h1>')
+        document.write('<p> JSON.stringify is used to display the entire JSON data. Some types of data that can cause issues in this method are undefined, characters, etc. </p>')
+
+        document.write('<h1> What happens when you call Object.freeze() on an object? Can you modify properties of a frozen object? Illustrate with an example. </h1>')
+        let car1 = {
+            make: "Honda",
+            model: "CRV",
+            year: 2013,
+            color: "Grey"
+        }
+        document.write(JSON.stringify(car1) + '<br>')
+        Object.freeze(car1)
+        car1.color = "Red"
+        document.write(JSON.stringify(car1) + '<br>')
+
+        document.write('<h1> What is the difference between Object.seal() and Object.freeze()? Give examples to demonstrate this.')
+        document.write('<p> Object.seal() is used to prevent a parameter from being added or modified whereas Object.freeza is used to prevent a parameter from being modified, added or deleted </p>')
+        let car2 = {
+            make: "Honda",
+            model: "CRV",
+            year: 2013,
+            color: "Grey"
+        }
+        document.write(JSON.stringify(car2) + '<br>')
+        Object.freeze(car2)
+        car2.color = 'Red'
+        document.write(JSON.stringify(car2) + '<br>')
+        Object.seal(car2)
+        car2.color = 'Blue'
+        document.write(JSON.stringify(car2) + '<br>')
+
+        document.write('How can you check if an object is frozen in JavaScript? Use Object.isFrozen() in your explanation. </h1>')
+        let car3 = {
+            make: "Honda",
+            model: "CRV",
+            year: 2013,
+            color: "Grey"
+        }
+        document.write(JSON.stringify(car3) + '<br>')
+        Object.freeze(car3)
+        document.write(Object.isFrozen(car3) + '<br>')
+
+        document.write('<h1> Describe how to determine if an object is sealed. What method would you use for this? </h1>')
+        let car4 = {
+            make: "Honda",
+            model: "CRV",
+            year: 2013,
+            color: "Grey"
+        }
+        document.write(JSON.stringify(car4) + '<br>')
+        Object.seal(car4)
+        document.write(Object.isSealed(car4) + '<br>')
+
+        document.write('<h1> Explain how to merge two objects using Object.assign(). What happens if both objects have the same property name? </h1>')
+        let car5 = {
+            make: "Honda",
+            model: "CRV",
+            year: 2013,
+            color: "Grey"
+        }
+        let car6 = {
+            make: "Jeep",
+            model: "Grand Cherokee Summit Reserve",
+            year: 2024,
+            color: "Red"
+        }
+        let car7 = Object.assign({}, car5, car6)
+        document.write(JSON.stringify(car7) + '<br>')
+
+        document.write('<h1> How do you use Object.fromEntries()? Provide an example where you convert an array of key-value pairs into an object. </h1>')
+        const entries = [['name', 'Sthavir'], ['age', 14], ['school', 'TMS']]
+        const object = Object.fromEntries(entries)
+        document.write(JSON.stringify(obj) + '<br>')
+
+        document.write('<h1> If you have a nested object, how would you clone it without losing the nested structure? Discuss the limitations of shallow cloning. </h1>')
+        let car8 = {
+            make: "Honda",
+            model: "CRV",
+            year: 2013,
+            color: "Grey",
+            engine: {
+                type: "2.4L 4-Cylinder V-TEC Engine",
+                horsepower: 200,
+                oil: "Honda Genuine Motor Oil"
+            }
+        }
+        let clone2 = JSON.parse(JSON.stringify(car8))
+        document.write(JSON.stringify(clone2) + '<br>')
+
+        document.write('<h1> What is a property descriptor in JavaScript? How can you retrieve the descriptor of a specific property using Object.getOwnPropertyDescriptor()? </h1>')
+        let car9 = {
+            make: "Honda",
+            model: "CRV",
+            year: 2013,
+            color: "Grey"
+        }
+        let descriptor = Object.getOwnPropertyDescriptor(car9, 'make')
+        document.write(JSON.stringify(descriptor) + '<br>')
+
+        document.write('<h1> What happens if you try to add a new property to an object that has been sealed? Provide a code example to illustrate your answer. </h1>')
+        let car10 = {
+            make: "Honda",
+            model: "CRV",
+            year: 2013,
+            color: "Grey"
+        }
+        Object.seal(car10)
+        car10.engine = "2.4L 4-Cylinder V-TEC Engine"
+        document.write(JSON.stringify(car10) + '<br>')
+
+        document.write('<h1> How can you loop through the properties of an object using a for...in loop? What should you be cautious about when doing this? </h1>')
+        let car11 = {
+            make: "Honda",
+            model: "CRV",
+            year: 2013,
+            color: "Grey"
+        }
+        for (let key in car11) {
+            document.write(key + ": " + car11[key] + '<br>')
+        }
+
+        document.write('<h1> How can you create a new object that inherits the properties and methods of an existing object? Explain using Object.create(). </h1>')
+        let car12 = {
+            make: "Honda",
+            model: "CRV",
+            year: 2013,
+            color: "Grey"
+        }
+        let car13 = Object.create(car12)
+        document.write(JSON.stringify(car13) + '<br>')
+
+    </script>
+</body>
+</html>

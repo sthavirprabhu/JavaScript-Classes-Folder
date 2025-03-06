@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Data Structures
+        document.write('<h1> Data Structures </h1>')
+        document.write('<p> 1. Primitive Datatype <br> 2. Object <br> 3. Arrays <br> 4. Set <br> 5. Maps <br> 5. Weak Set <br> 6. Weak Maps</p>')
+
+        // Primitive Datatype
+        document.write('<h1> Primitive Datatype </h1>')
+        document.write('<p> Number: Represents numeric values (both integers and floating-point) <br> String: Represents sequences of characters. <br> Boolean: Represents true or false values. <br> Undefined: Indicates a variable that has been declared but not assigned a value. <br> Null: Represents the intentional absence of any value. <br> Symbol (ES6): Represents a unique and immutable value often used as object property keys. <br> BigInt (ES11): Represents integers with arbitrary precision. </p>')
+        var integer = 10
+        var float = 10.5
+        var negative = -10
+        var scientific = 10e5
+        document.write(integer + ' is a ' + typeof(integer) + '<br>')
+        document.write(float + ' is a ' + typeof(float) + '<br>')
+        document.write(negative + ' is a ' + typeof(negative) + '<br>')
+        document.write(scientific + ' is a ' + typeof(scientific) + '<br>')
+        var firstName = 'Sthavir' //prompt('Enter your first name')
+        var lastName = 'Prabhu' //prompt('Enter your last name')
+        var fullName = firstName + ' ' + lastName
+        document.write('My name is ' + fullName + '<br>' + 'It is a ' + typeof(fullName) + ' datatype <br>')
+        var template = `My name is ${fullName} and it is a ${typeof(fullName)} datatype`
+        document.write(template + '<br>')
+        
+        //Operations on Strings
+        var message = 'Hello, World, I am Sthavir Prabhu, World, World     d'
+        document.write('<br>' + message + '<br>')
+        document.write(message.length + '<br>') // shows number of characters in the string
+        document.write(message.toUpperCase() + '<br>') // converts the string to uppercase
+        document.write(message.toLowerCase() + '<br>') // converts the string to lowercase
+        document.write(message.split(',') + '<br>') // splits the string into an array based on the separator
+        document.write(message.substring(7, 12) + '<br>') // extracts the characters from a string, between two specified indices
+        document.write(message.charAt(1).toUpperCase() + '<br>') // returns the character at a specified index
+        document.write(message.indexOf('World') + '<br>') // returns the position of the first occurrence of a specified value in a string // case sensitive
+        document.write(message.lastIndexOf('World') + '<br>') // returns the position of the last occurrence of a specified value in a string // case sensitive
+        document.write(message.includes('World') + '<br>') // checks if a string contains a specified value
+        document.write(message.replace('World', 'Universe') + '<br>') // searches a string for a specified value, or a regular expression, and returns a new string where the specified values are replaced
+        document.write(message.replaceAll('World', 'Hello') + '<br>') // replaces all occurrences of a specified value in a string
+        document.write(message.trim() + '<br>') // removes whitespace from both ends of a string
+        document.write(message.slice(0, 5) + '<br>')
+        document.write(message.startsWith('H') + '<br>') // checks only the first character of the first word of the string and so on for second, third, fourth, etc
+        document.write(message.endsWith(' d') + '<br>')
+
+        // Creating a String Object using a String Constructor
+        var object1 = new String("Hello World")
+        document.write(typeof(object1) + '<br>')
+        document.write('<h1> Using toString() method to get the primitive string </h1>')
+        // document.write(typeof(message) + '<br>')
+        var primitiveString = object1.toString()
+        document.write(typeof(primitiveString) + '<br>')
+        object1==primitiveString ? document.write('Equal' + '<br>') : document.write('Not equal' + '<br>')
+        document.write(object1.valueOf() + '<br>') // Prints out the primitive value of the string
+        var n1 = new Number(100)
+        document.write(typeof(n1) + '<br>')
+        document.write(n1.valueOf() + '<br>')
+        var n2 = n1.toString()
+        document.write(typeof(n2) + '<br>')
+        document.write(n2.valueOf() + '<br>')
+        var str = 'javascript'
+        document.write(str.padStart(18, 'start - ') + '<br>')
+        document.write(str.padEnd(16, ' - end') + '<br>')
+
+        document.write('<h1> Boolean </h1>')
+        let isActive = true
+        document.write(isActive + '<br>' + typeof(isActive) + '<br>')
+        let hasAccess = false
+        document.write(hasAccess + ' is a ' + typeof(hasAccess) + '<br>')
+
+        document.write('<h1> Undefined </h1>')
+        let x
+        document.write(`${x} is an ${typeof(x)} <br>`)
+        let null1 = null
+        document.write(`${null1} is a ${typeof(null1)} datatype, it shows "object" to indicate that it has no value. This behavior is a well-known quirk in JavaScript.`)
+        document.write(`<h1> Big Int </h1>`)
+        let BigIntValue = BigInt(9007199254740991)
+        document.write(`Datatype of ${BigIntValue} is a ${typeof(BigIntValue)} <br>`)
+        document.write(Number.MIN_SAFE_INTEGER + '<br>')
+        document.write(Number.MAX_SAFE_INTEGER + '<br>')
+        document.write(9007199254740991 + 3)
+        document.write(9007199254740991==9007199254740993)
+
+    </script>
+</body>
+</html>

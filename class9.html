@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="a"></p>
+    <script>
+        document.write('<h1> Set </h1>')
+        document.write('<p> Sets are a new object type with ES6 (ECMAScript 2015). A Set is a collection of values where each value may occur only once. </p>')
+
+        // Empty Set
+        var a = new Set() // Uses Set Constructor
+        document.write(a + '<br>')
+        document.write("Variable 'a' is an " + typeof a + '<br>')
+
+        // Creating a Set with Elements
+        document.write('<p> Creating a Set with Elements </p>')
+        var b = new Set([1, 2, 3, 1, 5, 2, 4, 3, 5]) // Uses Set Constructor
+        console.log(b + '<br>')
+        document.write(Array.from(b) + '<br>')
+
+        // Common Set Operations
+        document.write('<h1> Common Set Operations </h1>')
+        document.write('<p> Adding Elements to a Set </p>')
+        a.add(1)
+        document.write(Array.from(a) + '<br>')
+        b.add(7)
+        document.write(Array.from(b) + '<br>')
+        
+        document.write('<p> Deleting Elements from a Set </p>')
+        b.delete(7)
+        document.write(Array.from(b) + '<br>')
+        
+        document.write('<p> Exist </p>')
+        document.write(b.has(5) + '<br>')
+        document.write(b.has(7) + '<br>')
+
+        document.write('<p> Size of a Set </p>')
+        document.write(b.size + '<br>') // Length is used for arrays and Size is used for sets
+        
+        document.write('<p> Clearing a Set </p>')
+        b.clear()
+        document.write(Array.from(b) + '<br>') // Empty Set
+        document.write(b.size + '<br>')
+
+        document.write('<p> Iterating over a Set </p>')
+        let set = new Set([1, 2, 4, 7 ,3 ,6, 9])
+        for (let i of set) {
+            document.write(i + '<br>')
+        }
+        document.write('<br>')
+        set.forEach(callback=>{
+            document.write(callback + '<br>')
+        })
+        document.write('<br>')
+        for (let j of set.entries()) {
+            document.write(j + '<br>')
+        }
+
+        document.write('<h1> Set Operations </h1>')
+        document.write('<p> Union of Sets </p>')
+        let set1 = new Set([1, 2, 3, 4, 5])
+        let set2 = new Set([3, 4, 5, 6, 7])
+        let union = new Set([...set1, ...set2])
+        document.write(Array.from(union) + '<br>') // Duplicates get deleted
+
+        document.write('<p> Intersection of Sets </p>')
+        for (let i of set1) {
+            if (!set2.has(i)) {
+                set1.delete(i)
+            }
+        }
+        document.write(Array.from(set1) + '<br>')
+
+        let set3 = new Set([1, 2, 3, 4, 5])
+        let set4 = new Set([3, 4, 5, 6, 7])
+
+        document.write('<p> Difference of Sets </p>')
+        for (let i of set3) {
+            if (set4.has(i)) {
+                set3.delete(i)
+            }
+        }
+        document.write(Array.from(set3) + '<br>')
+
+        let set5 = new Set([1, 2, 3, 4, 5])
+        let set6 = new Set([3, 4, 5, 6, 7])
+
+        document.write('<p> Difference of Sets </p>')
+        for (let i of set6) {
+            if (set5.has(i)) {
+                set6.delete(i)
+            }
+        }
+        document.write(Array.from(set6) + '<br>')
+
+        document.write('<p> Symmetric Difference of Sets </p>')
+        let set7 = new Set([1, 2, 3, 4, 5])
+        let set8 = new Set([3, 4, 5, 6, 7])
+        for (let i of set7) {
+            if (set8.has(i)) {
+                set7.delete(i)
+                set8.delete(i)
+            }
+        }
+        document.write(Array.from(set7) + ',')
+        document.write(Array.from(set8) + '<br>')
+
+    </script>
+</body>
+</html>

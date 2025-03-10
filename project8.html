@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        document.write('<p> Merge Arrays: Given arr1 = [1, 2] and arr2 = [3, 4], create a new array that combines them.')
+        let arr1 = [1, 2];
+        let arr2 = [3, 4];
+        let arr3 = arr1.concat(arr2);
+        document.write(arr3);
+
+        document.write('<p> Prepend Value: Given arr = [1, 2, 3] and value = 0, create a new array with 0 at the beginning. </p>')
+        let arr = [1, 2, 3];
+        let value = 0;
+        arr.unshift(value);
+        document.write(arr);
+
+        document.write('<p> Insert into Middle: Given arr = [1, 2, 3, 4], index = 2, and value = 99, create a new array with 99 inserted at index 2. </p>')
+        let array = [1, 2, 3];
+        let value1 = 99;
+        let index = 2;
+        let newArray = array.slice(0, index).concat(value1).concat(array.slice(index));
+        document.write(newArray);
+
+        document.write('<p> Sum with Spread: Given arr = [1, 2, 3], calculate the sum of its elements assuming a function add(a, b, c) exists. Show how to call add with the array values. (Just the call, no function definition). </p>')
+        let arr4 = [1, 2, 3];
+        let sum = add(...arr4);
+        document.write(sum);
+
+        document.write('<p> Combine Multiple Arrays: Given arr1 = [1, 2], arr2 = [3, 4], and arr3 = [5, 6], create a single array containing all their elements. </p>')
+        let arr5 = [1, 2];
+        let arr6 = [3, 4];
+        let arr7 = [5, 6];
+        let arr8 = arr5.concat(arr6, arr7);
+        document.write(arr8);
+
+        document.write('<p> Check for Existence: Given arr = [1, 2, 3, 4, 5] and value = 3, determine if the array contains the value. </p>')
+        let arr9 = [1, 2, 3, 4, 5];
+        let value2 = 3;
+        let exists = arr9.includes(value2);
+        document.write(exists);
+
+        document.write('<p> Find All Occurrences: Given arr = [1, 2, 3, 2, 4, 2, 5] and value = 2, find the indices of all occurrences of 2. </p>')
+        let arr10 = [1, 2, 3, 2, 4, 2, 5];
+        let value3 = 2;
+        let indices = [];
+        let idx = arr10.indexOf(value3);
+        while (idx != -1) {
+            indices.push(idx);
+            idx = arr10.indexOf(value3, idx + 1);
+        }
+        document.write(indices);
+
+        document.write('<p> First Occurrence After Index: Given arr = [1, 2, 3, 2, 4] , value = 2, and startIndex = 2, find the index of the first occurrence of 2 starting from index 2. </p>')
+        let arr11 = [1, 2, 3, 2, 4];
+        let value4 = 2;
+        let startIndex = 2;
+        let idx1 = arr11.indexOf(value4, startIndex);
+        document.write(idx1);
+
+        document.write('<p> Last Occurrence Before Index: Given arr = [1, 2, 3, 2, 4, 2], value = 2, and endIndex = 4, find the index of the last occurrence of 2 searching backward from index 4. </p>')
+        let arr12 = [1, 2, 3, 2, 4, 2];
+        let value5 = 2;
+        let endIndex = 4;
+        let idx2 = arr12.lastIndexOf(value5, endIndex);
+        document.write(idx2);
+
+        document.write('<p> Case-Insensitive Check: Given arr = ["apple", "Banana", "orange"] and searchString = "banana", check if the array contains "banana" (case-insensitively). </p>')
+        let arr13 = ["apple", "Banana", "orange"];
+        let searchString = "banana";
+        let exists1 = arr13.some(item => item.toLowerCase() === searchString.toLowerCase());
+        document.write(exists1);
+
+        document.write('<p> Find First Even: Given arr = [1, 3, 5, 2, 4, 6], find the first even number. </p>')
+        let arr14 = [1, 3, 5, 2, 4, 6];
+        let even = arr14.find(num => num % 2 === 0);
+        document.write(even);
+
+        document.write('<p> Find Last Odd (Simulate): Given arr = [1, 2, 3, 4, 5], find the last odd number. (Simulate findLast using available methods). </p>')
+        let arr15 = [1, 2, 3, 4, 5];
+        let odd = arr15.reverse().find(num => num % 2 === 1);
+        document.write(odd);
+
+        document.write('<p> Find Object by Property: Given arr = [{name: "Alice", age: 30}, {name: "Bob", age: 25}, {name: "Charlie", age: 30}] and propertyName = "age", propertyValue = 25, find the object where age is 25. </p>')
+        let arr16 = [{name: "Alice", age: 30}, {name: "Bob", age: 25}, {name: "Charlie", age: 30}];
+        let propertyName = "age";
+        let propertyValue = 25;
+        let object = arr16.find(object => object[propertyName] === propertyValue);
+        document.write(object);
+
+        document.write('<p> Find Index of Prime: Given arr = [4, 6, 8, 9, 11, 12], find the index of the first prime number. (Assume you have an isPrime(num) helper function). </p>')
+        let arr17 = [4, 6, 8, 9, 11, 12];
+        let primeIndex = arr17.findIndex(num => isPrime(num));
+        document.write(primeIndex);
+
+        document.write('<p> Replace Based on Condition: Given arr = [5, 8, 12, 3, 15], find the index of the first number greater than 10 and replace that number with 0. </p>')
+        let arr18 = [5, 8, 12, 3, 15];
+        let index1 = arr18.findIndex(num => num > 10);
+        if (index1 !== -1) {
+            arr18[index1] = 0;
+        }
+        document.write(arr18);
+
+        document.write('<p> Check for Positive Numbers: Given arr = [-1, -2, 0, 3, -4], determine if at least one number is positive. </p>')
+        let arr19 = [-1, -2, 0, 3, -4];
+        let positive = arr19.some(num => num > 0);
+        document.write(positive);
+
+        document.write('<p> All Numbers Even: Given arr = [2, 4, 6, 8, 10], determine if all numbers are even. </p>')
+        let arr20 = [2, 4, 6, 8, 10];
+        let allEven = arr20.every(num => num % 2 === 0);
+        document.write(allEven);
+
+        document.write('<p> Range Check: Given arr = [15, 20, 22, 18, 19], min = 18, and max = 22, determine if all numbers are within the range [18, 22] (inclusive). </p>')
+        let arr21 = [15, 20, 22, 18, 19];
+        let min = 18;
+        let max = 22;
+        let inRange = arr21.every(num => num >= min && num <= max);
+        document.write(inRange);
+
+        document.write('<p> Array of Arrays Condition: Given arr = [[2, 4, 6], [1, 3, 5], [8, 10, 12]], determine if at least one inner array has all even numbers. </p>')
+        let arr22 = [[2, 4, 6], [1, 3, 5], [8, 10, 12]];
+        let hasAllEven = arr22.some(innerArr => innerArr.every(num => num % 2 === 0));
+        document.write(hasAllEven);
+
+        document.write('<p> Multiply and Log: Given arr = [1, 2, 3, 4] and multiplier = 2, multiply each element by 2 and log the result to the console. </p>')
+        let arr23 = [1, 2, 3, 4];
+        let multiplier = 2;
+        arr23.forEach(num => console.log(num * multiplier));
+        
+    </script>
+</body>
+</html>

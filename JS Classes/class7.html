@@ -82,6 +82,95 @@
         let myArrayCopy2 = myArray1.slice(1, -1) // Delete the first and last elements
         document.write(myArrayCopy2 + '<br>')
 
+        document.write('<h1> ConCat </h1>')
+        // Syntax: array.concat(array1, array2, array3, ...)
+        let myArray2 = [1, 2, 3, 4]
+        let newArray = myArray2.concat(myArray1, [6, 7, 8, 9], 3)
+        document.write(newArray + '<br>')
+        document.write('<h1> Spread Operator </h1>')
+        // Syntax: [...array]
+        let myArray3 = [...myArray2, ...newArray, 12, 23, "apple", "banana"]
+        document.write(myArray3 + '<br>')
+
+        document.write('<h1> Searching and Testing </h1>')
+        document.write('<p> indexOf Method </p>')
+        // Syntax: array.indexOf(element, startIndex)
+        let array = [10, 20, 10, 30, 40, 50, 10, 80]
+        document.write(array.indexOf(10) + '<br>')
+        document.write(array.indexOf(10, 1) + '<br>')
+        document.write(array.indexOf(99) + '<br>')
+
+        document.write('<p> lastIndexOf() Method </p>')
+        // Syntax: array.LastIndexOf(element, startIndex)
+        document.write(array.lastIndexOf(10) + '<br>')
+        document.write(array.lastIndexOf(10, 3) + '<br>')
+        
+        document.write('<p> includes() Method </p>') // Checks if value is present or not
+        // Syntax: array.includes(element, startIndex)
+        document.write(array.includes(10) + '<br>')
+        document.write(array.includes(10, 7) + '<br>')
+        document.write(array.includes(20, 0) + '<br>')
+        
+        document.write('<p> find() Method </p>') // Returns the first element that satisfies the condition
+        // Syntax: array.find(callback(element, index, array))
+        let result = array.find((callback)=>callback>30)
+        document.write(result + '<br>')
+        let result1 = array.find((callback)=>callback<10)
+        document.write(result1 + '<br>')
+
+        document.write('<p> findIndex() Method </p>') // Returns the index of the first element that satisfies the condition
+        // Syntax: array.findIndex(callback(element, index, array))
+        let result2 = array.findIndex((callback)=>callback>30)
+        document.write(result2 + '<br>')
+        let result3 = array.findIndex((callback)=>callback<10)
+        document.write(result3 + '<br>')
+
+        document.write('<p> some() Method </p>') // Checks if atleast one element satisfies the condition
+        // Syntax: array.some(callback(element, index, array))
+        let result4 = array.some((callback)=>callback%2==0)
+        document.write(result4 + '<br>')
+        let result5 = array.some((callback)=>callback%2==1)
+        document.write(result5 + '<br>')
+
+        document.write('<p> every() Method </p>') // Checks if all elements satisfy the condition
+        // Syntax: array.every(callback(element, index, array))
+        let result6 = array.every((callback)=>callback%2==0)
+        document.write(result6 + '<br>')
+        let result7 = array.every((callback)=>callback%2==1)
+        document.write(result7 + '<br>')
+        let result8 = array.every((callback)=>callback>10)
+        document.write(result8 + '<br>')
+        let result9 = array.every((callback)=>callback>9)
+        document.write(result9 + '<br>')
+        
+        document.write('<h1> Iterating </h1>')
+        document.write('<p> forEach() Method </p>')
+        // Syntax: array.forEach(callback(element, index, array))
+        document.write(array + '<br>')
+        array.forEach((callback)=>{
+            document.write(callback*2 + '<br>')
+        })
+        document.write('<p> map() Method </p>')
+        // Syntax: array.map(callback(element, index, array))
+        let newArray1 = array.map((callback)=>{
+            return callback*2
+        })
+        document.write(newArray1 + '<br>')
+
+        document.write('<p> filter() Method </p>')
+        // Syntax: array.filter(callback(element, index, array))
+        let newArray2 = array.filter((callback)=>{
+            return callback>30
+        })
+        document.write(newArray2 + '<br>')
+        
+        document.write('<p> reduce() Method </p>')
+        // Syntax: array.reduce(callback(accumulator, element, index, array), initialValue)
+        let sum = array.reduce((a, b)=>{
+            return a+b
+        })
+        document.write(sum + '<br>')
+    
     </script>
 </body>
 </html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        document.write('<p> Create an empty Map called studentGrades. </p>')
+        let studentGrades = new Map()
+        document.write(Array.from(studentGrades) + '<br>')
+
+        document.write("<p> Create a Map called itemPrices with three initial key-value pairs: 'apple': 1.00, 'banana': 0.50, 'orange': 0.75. </p>")
+        let itemPrices = new Map([
+            ['apple', 1.00],
+            ['banana', 0.50],
+            ['orange', 0.75]
+        ])
+        document.write(Array.from(itemPrices) + '<br>')
+
+        document.write('<p> Create a Map called employeeIDs where the keys are employee names (strings) and the values are their unique ID numbers (integers). Add 5 employees. </p>')
+        let employeeIDs = new Map([
+            ['Alice', 1],
+            ['Bob', 2],
+            ['Charlie', 3],
+            ['David', 4],
+            ['Eve', 5]
+        ])
+        document.write(Array.from(employeeIDs) + '<br>')
+
+        document.write("<p> Create a Map called bookAuthors where the keys are book titles (strings) and the values are the author's name (string). Include at least 3 books. </p>")
+        let bookAuthors = new Map([
+            ['Harry Potter', 'J.K Rowling'],
+            ['Percy Jackson', 'Rick Riordan'],
+            ['The Hunger Games', 'Suzanne Collins']
+        ])
+        document.write(Array.from(bookAuthors) + '<br>')
+
+        document.write('<p> Create a Map called countryCodes using an array of arrays, where each inner array contains a country name (string) and its two-letter country code (string). </p>')
+        let countryCodes = new Map([
+            ['USA', 'US'],
+            ['United Kingdom', 'UK'],
+            ['UAE', 'AE']
+        ])
+        document.write(Array.from(countryCodes) + '<br>')
+
+        document.write("<p> Add the key-value pair 'grape': 1.25 to the itemPrices Map. </p>")
+        itemPrices.set('grape', 1.25)
+        document.write(Array.from(itemPrices) + '<br>')
+
+        document.write("<p> Update the value for the key 'apple' in the itemPrices Map to 1.10. </p>")
+        itemPrices.set('apple', 1.10)
+        document.write(Array.from(itemPrices) + '<br>')
+
+        document.write("<p> Add a new employee named 'David' with an ID of 1006 to the employeeIDs Map. </p>")
+        document.write(Array.from(employeeIDs) + '<br>')
+        employeeIDs.set('David', 1006)
+        document.write(Array.from(employeeIDs) + '<br>')
+
+        document.write("<p> Add a new book 'The Secret Garden' by Frances Hodgson Burnett to the bookAuthors Map. </p>")
+        document.write(Array.from(bookAuthors) + '<br>')
+        bookAuthors.set('The Secret Garden', 'Frances Hodgson Burnett')
+        document.write(Array.from(bookAuthors) + '<br>')
+
+        document.write('<p> If the studentGrades Map already has a key for "Alice", update her grade to 95. Otherwise, add "Alice" with a grade of 88. </p>')
+        document.write(Array.from(studentGrades) + '<br>')
+        if (studentGrades.has('Alice')) {
+            studentGrades.set('Alice', 95)
+        } else {
+            studentGrades.set('Alice', 88)
+        }
+        document.write(Array.from(studentGrades) + '<br>')
+
+        document.write("<p> Get the price of a 'banana' from the itemPrices Map and store it in a variable. </p>")
+        document.write(Array.from(itemPrices) + '<br>')
+        let bananaPrice = itemPrices.get('banana')
+        document.write(bananaPrice + '<br>')
+
+        document.write("<p> Check if the itemPrices Map contains a key for 'mango'. Store the result (true/false) in a variable. </p>")
+        document.write(Array.from(itemPrices) + '<br>')
+        let hasMango = itemPrices.has('mango')
+        document.write(hasMango + '<br>')
+
+        document.write('<p> Get the ID of employee "Alice" from the employeeIDs Map. If "Alice" doesnt exist, store null in a variable. </p>')
+        document.write(Array.from(employeeIDs) + '<br>')
+        let aliceID = employeeIDs.get('Alice')
+        if (aliceID === undefined) {
+            aliceID = null
+        }
+        document.write(aliceID + '<br>')
+
+        document.write("<p> Check if the bookAuthors Map contains a book titled 'Pride and Prejudice'. </p>")
+        document.write(Array.from(bookAuthors) + '<br>')
+        let hasPrideAndPrejudice = bookAuthors.has('Pride and Prejudice')
+        document.write(hasPrideAndPrejudice + '<br>')
+
+        document.write('<p> Retrieve the country code for "United States" from the countryCodes Map. </p>')
+        document.write(Array.from(countryCodes) + '<br>')
+        let usaCode = countryCodes.get('United States')
+        document.write(usaCode + '<br>')
+
+        document.write('<p> Remove the "orange" entry from the itemPrices Map. </p>')
+        document.write(Array.from(itemPrices) + '<br>')
+        itemPrices.delete('orange')
+        document.write(Array.from(itemPrices) + '<br>')
+
+        document.write('<p> Remove employee "Bob" from the employeeIDs Map. </p>')
+        document.write(Array.from(employeeIDs) + '<br>')
+        employeeIDs.delete('Bob')
+        document.write(Array.from(employeeIDs) + '<br>')
+
+        document.write('<p> Remove the book "The Great Gatsby" from the bookAuthors Map. </p>')
+        document.write(Array.from(bookAuthors) + '<br>')
+        bookAuthors.delete('The Great Gatsby')
+        document.write(Array.from(bookAuthors) + '<br>')
+
+        document.write('<p> Clear all entries from the studentGrades Map. </p>')
+        document.write(Array.from(studentGrades) + '<br>')
+        studentGrades.clear()
+        document.write(Array.from(studentGrades) + '<br>')
+
+        document.write('<p> Check the size of the itemPrices Map after removing "orange". </p>')
+        document.write(Array.from(itemPrices) + '<br>')
+        let itemPricesSize = itemPrices.size
+        document.write(itemPricesSize + '<br>')
+
+        document.write('<p> Iterate through the itemPrices Map and print each item name and its price to the console. </p>')
+        for (let i of itemPrices.entries()) {
+            document.write(i + '<br>')
+        }
+        
+        document.write('<p> Iterate through the employeeIDs Map and create an array containing all the employee names. </p>')
+        let employeeNames = []
+        for (let i of employeeIDs.keys()) {
+            employeeNames.push(i)
+        }
+        document.write(employeeNames + '<br>')
+
+        document.write('<p> Iterate through the bookAuthors Map and create a string that lists all the books, separated by commas. </p>')
+        let bookList = ''
+        for (let i of bookAuthors.entries()) {
+            document.write(i + '<br>')
+        }
+
+        document.write('<p> Use forEach to iterate through the studentGrades Map and give each student 5 extra points (update their grades). </p>')
+        document.write(Array.from(studentGrades) + '<br>')
+        studentGrades.forEach((grade, student) => {
+            studentGrades.set(student, grade + 5)
+        })
+        document.write(Array.from(studentGrades) + '<br>')
+
+        document.write('<p> Iterate through the countryCodes Map and create a new Map where the keys are the country codes and the values are the country names. </p>')
+        let countryNames = new Map()
+        for (let i of countryCodes.entries()) {
+            countryNames.set(i[1], i[0])
+        }
+        document.write(Array.from(countryNames) + '<br>')
+
+    </script>
+</body>
+</html>

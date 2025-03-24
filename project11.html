@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        document.write('<p> Basic Creation: Create a WeakSet and add two different objects to it. </p>')
+        let weakSet = new WeakSet()
+        let obj1 = {name: 'John'}
+        let obj2 = {name: 'Jane'}
+        weakSet.add(obj1)
+        weakSet.add(obj2)
+        document.write(weakSet)
+
+        document.write('<p> Adding Objects: Create a WeakSet and add an object that represents a user. Check if this object exists in the WeakSet. </p>')
+        // WeakSet created above
+        // weakSet.has(obj1)
+        document.write(weakSet.has(obj1))
+
+        document.write('<p> Garbage Collection: Add an object to a WeakSet, then set that object reference to null. Determine whether the object can be garbage collected. </p>')
+        let obj3 = {age: 20}
+        weakSet.add(obj3)
+        document.write(weakSet)
+        obj3 = null
+        document.write(weakSet)
+
+        document.write('<p> Checking Existence: Create a WeakSet, add an object to it, and then use the .has() method to check if the object exists before and after deleting it. </p>')
+        let weakSet2 = new WeakSet()
+        let obj4 = {age: 30}
+        weakSet2.add(obj4)
+        document.write(weakSet2.has(obj4))
+        weakSet2.delete(obj4)
+        document.write(weakSet2.has(obj4))
+
+        document.write('<p> Non-iterable: Attempt to iterate over a WeakSet with a for...of loop. What happens? </p>')
+        // for (let i of weakSet) {
+        //     document.write(i + '<br>')
+        // }
+
+        document.write('<p> Weak Reference Behavior: Create two references to an object, add it to a WeakSet, and later remove one reference. Does it still exist in the WeakSet? </p>')
+        let obj5 = {age: 40}
+        let obj6 = obj5
+        weakSet.add(obj5)
+        obj6 = null
+        document.write(weakSet.has(obj5))
+
+        document.write('<p> WeakSet and Event Listeners: Use a WeakSet to track DOM elements that have an event listener attached. Explain how it prevents memory leaks. </p>')
+        // Not sure how to do that
+
+        document.write('<p> Unique Users Tracking: Implement a simple application using a WeakSet to track unique user sessions, where each user session is represented as an object. </p>')
+        function trackElement() {
+            let weakSet3 = new WeakMap()
+            return {
+                addSession(name, time) {
+                    weakSet3.set(name, time)
+                },
+                getSessionData(name) {
+                    return weakSet3.get(name)
+                },
+                hasSessionData(name) {
+                    return weakSet3.has(name)
+                },
+                removeSession(name) {
+                    weakSet3.delete(name)
+                }
+            }
+        }
+        let a = trackElement()
+        let user1 = {name: 'Alice'}
+        let user2 = {name: 'Bob'}
+        a.addSession(user1, '10:00')
+        a.addSession(user2, '11:00')
+        document.write(a.hasSessionData(user1) + '<br>')
+        document.write(a.hasSessionData(user2) + '<br>')
+
+        document.write('<p> Error Handling: Try to add a primitive type (like a string or a number) to a WeakSet. What error is thrown? </p>')
+        let weakSet4 = new WeakSet()
+        // weakSet4.add('Hello')
+
+        document.write('<p> Memory Management: Create several large objects, manage them using a WeakSet, and observe memory usage in a browser console before and after nullifying the references. </p>')
+        let weakSet5 = new WeakSet()
+        let obj7 = {name: 'John', age: 20, city: 'Dubai, UAE'}
+        weakSet5.add(obj7)
+        obj7 = null
+        console.log(weakSet5)
+        // Memory Usage went Down when obj7 was nullified
+
+        document.write('<p> Basic Creation: Create a WeakMap and associate it with an object and a string value. </p>')
+        let weakMap = new WeakMap()
+        let obj8 = {name: 'John'}
+        weakMap.set(obj8, 'Hello')
+        document.write(weakMap)
+
+        document.write('<p> Adding Key-Value Pairs: Write a function that takes an object and a value, then stores the value in a WeakMap using the object as the key. </p>')
+        function storeValue(obj, value) {
+            weakMap.set(obj, value)
+        }
+        storeValue(obj8, 'Hi')
+        document.write(weakMap)
+
+        document.write('<p> Retrieving Values: Create a WeakMap, store several values, and retrieve the values using the corresponding keys. </p>')
+        document.write(weakMap.get(obj8))
+
+        document.write('<p> Checking Key Existence: After adding a key-value pair to a WeakMap, check for the existence of the key using the .has() method. What does it return? </p>')
+        document.write(weakMap.has(obj8))
+
+        document.write('<p> Deleting Key-Value Pairs: Create a WeakMap, add several entries, and delete a specific entry. Verify that it was removed by checking its existence. </p>')
+        weakMap.delete(obj8)
+        document.write(weakMap.has(obj8))
+
+        document.write('<p> Garbage Collection: Create an object, add it to a WeakMap, and then nullify the reference to that object. Explain what happens to the entry in the WeakMap. </p>')
+        let obj10 = {name: 'John'}
+        weakMap.set(obj10, 'Hello')
+        obj10 = null
+        document.write(weakMap.has(obj10))
+
+        document.write('<p> Private Data Storage: Simulate a scenario where you use a WeakMap to store private data for a class instance. Demonstrate how to access this data within the class methods. </p>')
+        function classData() {
+            let weakMap3 = new WeakMap()
+            return {
+                addPrivateData(name, data) {
+                    weakMap3.set(name, data)
+                },
+                getPrivateData(name) {
+                    return weakMap3.get(name)
+                },
+                hasPrivateData(name) {
+                    return weakMap3.has(name)
+                },
+                removePrivateData(name) {
+                    weakMap3.delete(name)
+                }
+            }
+        }
+        let b = classData()
+        let obj9 = {name: 'John', email: 'john@gmail.com'}
+        b.addPrivateData(obj9, 'Hello')
+        document.write(b.getPrivateData(obj9) + '<br>')
+        document.write(b.hasPrivateData(obj9) + '<br>')
+        b.removePrivateData(obj9)
+
+        document.write('<p> Non-iterable Nature: Attempt to iterate over a WeakMap using .forEach(). What error or limitation do you encounter? </p>')
+        // for (let i of weakMap) {
+        //     document.write(i + '<br>')
+        // }
+
+        document.write('<p> WeakMap with DOM Elements: Use a WeakMap to associate metadata with DOM elements, like storing the last time a user clicked on each element. </p>')
+        // Not sure how to do that
+
+        document.write('<p> Handling Multiple Objects: Create a WeakMap where each key is an object representing a product and the value is its price. Write a function that retrieves the price given a product object. </p>')
+        
+
+    </script>
+</body>
+</html>

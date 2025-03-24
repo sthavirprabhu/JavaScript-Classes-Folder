@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        document.write('<h1>Ask the user to input a number and determine whether it is positive, negative, or zero.</h1>')
+        let input1 = 0 // parseInt(prompt("Enter a Number"))
+        if(input1>0){
+            document.write('Number is Positive')
+        }
+        else if(input1<0){
+            document.write('Number is Negative')
+        }
+        else{
+            document.write('Number is Zero')
+        }
+
+        document.write('<h1>Ask the user for their age and determine if they can watch a rated R movie (age ≥ 17).</h1>')
+        let age = 18 // parseInt(prompt("Enter your Age"))
+        if(age>17){
+            document.write('You can Watch')
+        }
+        else{
+            document.write('You can not Watch')
+        }
+
+        document.write('<h1>Prompt the user for their age and check if they are eligible to vote (age ≥ 18).</h1>')
+        let age1 = 18 // parseInt(prompt("Enter your Age"))
+        if(age1>=18){
+            document.write('You can Vote')
+        }
+        else{
+            document.write('You can not Vote')
+        }
+
+        document.write('<h1>Ask the user for their GPA and classify it as "Excellent" (≥ 3.5), "Good" (2.5 to 3.4), or "Needs Improvement" (< 2.5).</h1>')
+        let GPA = 3.6
+        if(GPA>3.5){
+            document.write('Excellent')
+        }
+        else if(GPA<2.5){
+            document.write('Needs Improvement')
+        }
+        else{
+            document.write('Good')
+        }
+
+        document.write('<h1>Prompt the user for their favorite sport and recommend activities based on their choice (e.g., basketball, soccer, swimming).</h1>')
+        let favSport = 'basketball'
+        if (favSport === 'basketball'){
+            document.write('You can play basketball with your friends')
+        }
+        else if (favSport === 'Football'){
+            document.write('You can play Football with your friends')
+        }
+
+        document.write('<h1>Prompt the user to enter a temperature in Fahrenheit and convert it to Celsius. Provide a message based on the converted temperature (e.g., below freezing, normal, hot).</h1>')
+        let temp = 350
+        let Celsius = ((temp-32)*5/9)
+        document.write(Celsius + '<br>')
+        if (Celsius>=100){
+            document.write('Hot')
+        }
+        else if(Celsius<=0){
+            document.write('Cold')
+        }
+        else{
+            document.write('Normal')
+        }
+
+        document.write('<h1>Calculate the Body Mass Index (BMI) based on the users height and weight, and categorize it.</h1>')
+        let height = 164
+        let weight = 55
+        let BMI = height/weight
+        if (BMI>100){
+            document.write('Obese')
+        }
+        else if(BMI<=10){
+            document.write('UnderWeight')
+        }
+        else {
+            document.write('Optimum')
+        }
+
+        document.write('<h1>Prompt the user to enter a username and password and validate them against predefined credentials.</h1>')
+        let username = "sthavirprabhu@gmail.com"
+        let password = '********'
+        let userGuessedUserName = "sthavirprabhu@gmail.com"
+        let userGuessedPassword = '********'
+        if (username === userGuessedUserName && password === userGuessedPassword){
+            document.write('Correct')
+        }
+        else if (username === userGuessedUserName && password !== userGuessedPassword){
+            document.write('Incorrect Password')
+        }
+        else if (username !== userGuessedUserName && password === userGuessedPassword){
+            document.write('Incorrect Username')
+        }
+        else {
+            document.write('Incorrect')
+        }
+
+        document.write('<h1>Ask the user for their favorite cuisine (e.g., Italian, Mexican, Chinese) and provide a food recommendation based on their choice.</h1>')
+        let favCuisine = "Italian"
+        if (favCuisine === 'Italian'){
+            document.write('You can eat Pasta')
+        }
+        else if (favCuisine === 'Mexican'){
+            document.write('You can eat Tacos')
+        }
+        else if (favCuisine === 'Chinese'){
+            document.write('You can eat Noodles')
+        }
+
+        document.write('<h1>Prompt the user for a month number (1-12) and output the name of the month using a switch statement.</h1>')
+        let monthnum = 3
+        switch(monthnum){
+            case 1: month = document.write('January')
+            break
+            case 2: month = document.write('February')
+            break
+            case 3: month = document.write('March')
+            break
+            case 4: month = document.write('April')
+            break
+            case 5: month = document.write('May')
+            break
+            case 6: month = document.write('June')
+            break
+            case 7: month = document.write('July')
+            break
+            case 8: month = document.write('August')
+            break
+            case 9: month = document.write('September')
+            break
+            case 10: month = document.write('October')
+            break
+            case 11: month = document.write('November')
+            break
+            case 12: month = document.write('December')
+            break
+        }
+
+        document.write('<h1>Ask the user for the number of doors in a car (2, 4, etc.) and determine the type of car (e.g., Coupe, Sedan, etc.) using a switch statement.</h1>')
+        let numOfDoors = 2
+        if (numOfDoors === 2){
+            document.write('Its a Coupe')
+        }
+        else if (numOfDoors === 4){
+            document.write('Its a Sedan/SUV')
+        }
+        else if (numOfDoors === 6){
+            document.write('Its a Limosuine')
+        }
+
+    </script>
+</body>
+</html>

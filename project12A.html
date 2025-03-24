@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <Script>
+        document.write('<h1> Use a while loop to continuously ask the user for numbers and calculate their sum until the user inputs 0 (Uncomment Code)</h1>')
+        // let num = parseInt(prompt('Enter a number'))
+        // let sum = 0
+        // do {
+        //     num = parseInt(prompt('Enter a Number'))
+        //     sum += num
+        // } while (num !== 0)
+        // document.write(sum)
+
+        document.write('<h1> Write a while loop that prints numbers starting from 1 until the sum of printed numbers exceeds 100. </h1>')
+        let num2 = 1
+        let sum2 = 0
+        do {
+            num2 += 1
+            sum2 += num2
+        } while (sum2<100)
+        document.write(sum2)
+        
+        document.write('<h1>Create a while loop that prompts the user to guess a predefined number. Keep asking until they guess correctly. (Uncomment Code)<h1>')
+        // let num3 = 34
+        // let guessNum3 = parseInt(prompt('Enter a Number'))
+        // do {
+        //     guessNum3 = parseInt(prompt('Enter a Number'))
+        // } while (num3 != guessNum3){
+        //     document.write('<p> You are Correct </p>')
+        // }
+        
+        document.write('<h1>Using a while loop, count down from a user-provided number to 0, printing each number. (Uncomment Code)<h1>')
+        // let num4 = parseInt(prompt('Enter a number'))
+        // do {
+        //     document.write(num4-1 + '<br>')
+        //     num4 -= 1
+        // } while (num4> 0)
+        
+        document.write('<h1>Use a while loop to repeatedly ask the user for a positive number until they enter a valid one. (Uncomment Code)<h1>')
+        // let num5 = parseInt(prompt('Enter a number'))
+        // do {
+        //     num5 = parseInt(prompt('Enter a number'))
+        // }
+        // while(num5<0)
+        // document.write('<p> Positive Number Entered </p>')
+        
+        document.write('<h1>Create a while loop to calculate the sum of all odd numbers from 1 to N, where N is provided by the user. (Uncomment Code)<h1>')
+        // let num6 = parseInt(prompt('Enter a Number'))
+        // let startingNum = 1
+        // let sum6 = 0
+        // while (startingNum <= num6) {
+        //     if (startingNum % 2 !== 0) {
+        //         sum6 += startingNum;
+        //     }
+        //     startingNum++;
+        // }document.write(sum6)
+        
+        document.write('<h1>Write a for loop to print all even numbers between 1 and 100. (Uncomment Code)<h1>')
+        // for (let i = 2; i <= 100; i ++) {
+        //     if(i%2==0){
+        //         document.write(i + '<br>');
+        //     }
+        // }
+        
+        document.write('<h1>Use a for loop to calculate the sum of all elements in an array. (Uncomment Code)<h1>')
+        // let arr1 = [2, 4, 6, 8, 10]
+        // let sum9 = 0
+        // for (let i = 0; i < arr1.length; i++) {
+        //     sum9 += arr1[i];
+        // } document.write(sum9)
+        
+        document.write('<h1>Write a for loop to count the number of vowels in a string provided by the user. (Uncomment Code)<h1>')
+        // let str = "I love coding"
+        // let vowelCount = 0
+        // for (let i = 0; i < str.length; i++) {
+        // if (('aeiouAEIOU').includes(str[i])) {
+        //     vowelCount++;
+        // }
+        // } document.write(vowelCount)
+        
+        document.write('<h1>Create a for loop that generates an array of squares of numbers from 1 to N. <h1>')
+        // let num11 = 5
+        // let arr2 = []
+        // for (let i = 1; i<=num11; i++){
+        //     document.write(num11*num11 + i + '<br>')
+        // }
+        
+        document.write('<h1>Create a do...while loop that keeps asking the user to enter a password until they enter the correct password.(Uncomment Code)<h1> ')
+        // let pass = '********'
+        // let guessPass = prompt('Enter the password')
+        // do {
+        //     guessPass = prompt('Enter the password')
+        // } while (pass != guessPass)
+        
+        document.write('<h1>Create an object with item names as keys and their prices as values. Use a for...in loop to calculate the total value of all items. (Uncomment Code)<h1>')
+        // let prices = [10.99, 5.49, 3.25]
+        // let sum13 = 0
+        // for (let i of prices){
+        //     sum13+=i
+        // }
+        // document.write(sum13)
+        
+        document.write('<h1>Use a for...of loop to print each element from an array of colors.(Uncomment Code)<h1>')
+        // let arr3 = ['red', 'orange', 'yellow', 'green', 'blue', 'violet', 'purple']
+        // for (let i of arr3){
+        //     document.write(i+'<br>')
+        // }
+        
+        document.write('<h1>Write a do...while loop that prompts the user to enter positive numbers and calculates their sum until a negative number is entered. (Uncomment Code)</h1>')
+        // let num15 = parseInt(prompt('Enter a Number'))
+        // let sum15 = 0
+        // do {
+        //     num15 = parseInt(prompt('Enter a Number'))
+        //     sum15+=num15
+        // } while (num15 > 0)
+        // document.write(sum15)
+        
+        document.write('<h1>Write a program that counts how many properties are in a given object using a for...in loop. (Uncomment Code)<h1>')
+        // function countProperties(obj) {
+        // let count = 0;
+        // for (let key in obj) {
+        //         if (obj.hasOwnProperty(key)) {
+        //             count+=1
+        //         }
+        //     }
+        //     return count;
+        // }
+
+        // const myObject = {
+        //     name: 'Alice',
+        //     age: 25,
+        //     occupation: 'Engineer'
+        // };
+        // document.write(countProperties(myObject))
+        
+        document.write('<h1>Use a do...while loop to calculate the average of numbers entered by the user until they enter 0 to stop.<h1>')
+        let sum17
+        let num17 = parseFloat(prompt("Enter a number"))
+        do {
+            num17 = parseFloat(prompt("Enter a number"))
+            sum += num17
+        }while(num17 != 0)
+        
+        document.write('<h1>Given an array of words, use a for...of loop to find and print the longest word.<h1>')
+
+        
+        document.write('<h1>Use a for...in loop to print each key and value from a provided object representing a persons details.<h1>')
+
+        
+        document.write('<h1>UAsk the user for a string and use a do...while loop to repeat it until the user decides to stop.<h1>')
+
+        
+        document.write('<h1>Using a for...of loop, count the number of vowels in a string provided by the user.<h1>')
+
+        
+        document.write('<h1>Use a for...in loop to check if a specific key exists in an object, and log a message indicating its existence.<h1>')
+
+        
+        document.write('<h1>Use a for...of loop to create a new array containing the squares of numbers from an original array.<h1>')
+
+        
+        document.write('<h1>Create an object and use a for...in loop to log properties only if they meet certain conditions (e.g., numeric values greater than a threshold).<h1>')
+
+        
+        document.write('<h1>Use a do...while loop to ask the user for characters and keep collecting them until they enter "exit".<h1>')
+
+        
+        document.write('<h1>Create a function that takes an object as an argument and uses a for...in loop to clone it into a new object.<h1>')
+
+        
+    </Script>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        document.write('<h3> Print all numbers from 1 to 20, but stop when you reach 15. </h3>')
+        let i = 1
+        while(i<=20){
+            if(i==15){
+                break
+            }
+            document.write(i+'<br>')
+            i++
+        }
+
+        document.write('<h3> Print all even numbers from 1 to 30. </h3>')
+        let j = 1
+        while(j<=30){
+            if(j%2==0){
+                document.write(j+'<br>')
+            }
+            j++
+        }
+
+        document.write('<h3> Print all odd numbers from 1 to 20, skipping the number 5. </h3>')
+        let k = 1
+        while(k<=20){
+            if(k==5){
+                k++
+                continue
+            }
+            if(k%2!=0){
+                document.write(k+'<br>')
+            }
+            k++
+        }
+
+        document.write('<h3> Print the multiplication table of 7 from 1 to 10. </h3>')
+        let l = 1
+        while(l<=10){
+            document.write('7 x '+l+' = '+7*l+'<br>')
+            l++
+        }
+
+        document.write('<h3> Print the numbers from 1 to 100, but for multiples of 3, print "Fizz"; for multiples of 5, print "Buzz"; and for multiples of both, print "FizzBuzz." </h3>')
+        let m = 1
+        while(m<=100){
+            if(m%3==0 && m%5==0){
+                document.write('FizzBuzz<br>')
+            }else if(m%3==0){
+                document.write('Fizz<br>')
+            }else if(m%5==0){
+                document.write('Buzz<br>')
+            }else{
+                document.write(m+'<br>')
+            }
+            m++
+        }
+
+        document.write('<h3> Print numbers from 1 to 10, but replace 2 with "Two" and 3 with "Three." </h3>')
+        let n = 1
+        while(n<=10){
+            if(n==2){
+                document.write('Two<br>')
+            }else if(n==3){
+                document.write('Three<br>')
+            }else{
+                document.write(n+'<br>')
+            }
+            n++
+        }
+
+        document.write('<h3> Print the factorial of numbers from 1 to 5. </h3>')
+        let o = 1
+        while(o<=5){
+            let fact = 1
+            let p = 1
+            while(p<=o){
+                fact *= p
+                p++
+            }
+            document.write('Factorial of '+o+' is '+fact+'<br>')
+            o++
+        }
+
+        document.write('<h3> Print all characters in a string, but skip vowels. </h3>')
+        let str = 'Hello World'
+        let q = 0
+        while(q<str.length){
+            if(str[q]=='a' || str[q]=='e' || str[q]=='i' || str[q]=='o' || str[q]=='u'){
+                q++
+                continue
+            }
+            document.write(str[q]+'<br>')
+            q++
+        }
+
+        document.write('<h3> Print the first 10 Fibonacci numbers. </h3>')
+        let r = 1
+        let s = 0
+        let t = 0
+        while(r<=10){
+            document.write(s+'<br>')
+            t = s
+            s = s+t
+            r++
+        }
+
+        document.write('<h3> Print numbers from 1 to 50, but stop printing once you reach a number divisible by 25. </h3>')
+        let u = 1
+        while(u<=50){
+            if(u%25==0){
+                break
+            }
+            document.write(u+'<br>')
+            u++
+        }
+    
+    </script>
+</body>
+</html>

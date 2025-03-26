@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Break, Continue and Return</h1>
+    <script>
+        // Break - Exits the nearest enclosing loop/switch statement
+        // Continue - Skips the current iteration of a loop and proceeds to the next iteration.
+        // Return - Exits a function and optionally returns a value.
+
+        for (let i = 1; i<=10; i++){
+            if (i==7){
+                break
+            }
+            document.write(i + '<br>')
+        }
+
+        for (let i = 1; i<=10; i++){
+            if (i%2==0){
+                continue
+            }
+            document.write(i)
+        } document.write('<br>')
+
+        for (let i = 1; i<=10; i++){
+            if (i == 7)
+                continue
+            document.write(i)
+        } document.write('<br>')
+
+        for (let i = 1; i<=100; i++){
+            if (i%7== 0) continue
+            document.write(i + ' ')
+        } document.write('<br>')
+
+        let [a, b] = [0, 1]
+
+        for (let i = 1; i <= 10; i++) {  
+            if (a > 50) {
+            break
+            };   
+            document.write(a+" ");  
+            [a, b] = [b, a + b];  
+        } document.write('<br>')
+
+        function add(a, b){
+            return a + b
+        }
+        document.write(add(10, 5) + '<br>')
+
+        function positiveSquare(a){
+            if (a<0){
+                return 'Negative Number'
+            }
+            return a*a
+        }
+        document.write(positiveSquare(-3) + '<br>')
+
+        function bigNum(arr){
+            for (let i of arr){
+                if (i>10){
+                    return i
+                }
+            }return undefined
+        }
+        document.write(bigNum([1, 2, 3, 9, 10, 11]) + '<br>')
+
+        function skipE(str){
+            let result = ''
+            for (let i of str){
+                if(i == 'e'){
+                    continue
+                }
+                result+=i
+            }
+            return result
+        }
+        document.write(skipE('Hello World'))
+
+        let str = 'Hello World'
+        for (let i of str){
+            if (i == 'e') continue;
+            document.write(i)
+        }
+
+    </script>
+</body>
+</html>

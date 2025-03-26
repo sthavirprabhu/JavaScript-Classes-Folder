@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        document.write('<h1> Maps </h1>')
+        document.write('<p> Maps are a new object type with ES6 (ECMAScript 2015). A Map is a collection of key-value pairs where each key may occur only once. </p>')
+
+        // Empty Map
+        var a = new Map() // Uses Map Constructor
+        var b = new Map([
+            ['a', 1],
+            ['b', 2],
+            ['c', 3]
+        ])
+        document.write(Array.from(a) + Array.from(b) + '<br>')
+
+        document.write('<h1> Common Map Operations </h1>')
+
+        document.write('<p> Adding/Updating Elements to a Map </p>')
+        b.set('d', 4)
+        document.write(Array.from(b) + '<br>')
+        b.set(1, 1)
+        document.write(Array.from(b) + '<br>')
+        b.set(1, 75)
+        document.write(Array.from(b) + '<br>')
+        
+        document.write('<p> Retrieving Elements from a Map </p>')
+        const c = new Map()
+        c.set('name', 'Alice')
+        c.set('age', 25)
+        c.set('email', 'sthavirprabhu@gmail.com')
+        document.write(`${c.get('name')} is a ${c.get('age')} year old and you can contact her through her email, ${c.get('email')}`)
+
+        document.write('<p> Deleting Elements from a Map </p>')
+        c.delete('email')
+        document.write(Array.from(c) + '<br>')
+        document.write(c.has('email') + '<br>') // Checks if the key is present in the map
+
+        document.write('<p> Size of a Map </p>')
+        document.write(c.size + '<br>')
+
+        document.write('<p> Clearing a Map </p>')
+        c.clear()
+        document.write(Array.from(c) + '<br>') // Empty Map
+        document.write(c.size + '<br>')
+        
+        document.write('<p> Iterating over a Map </p>') // Lists out all the keys and values in the map
+        for (let i of b) {
+            document.write(i + '<br>')
+        }
+        document.write('<br>')
+        for (let i of b.keys()) {
+            document.write(i + '<br>')
+        }
+        document.write('<br>')
+        for (let i of b.values()) {
+            document.write(i + '<br>')
+        }
+        document.write('<br>')
+        for (let i of b.entries()) {
+            document.write(i + '<br>')
+        }
+        document.write('<br>') // Displays entries without the commas
+        for (let [i, j] of b.entries()) {
+            document.write(i, j + '<br>')
+        }
+        document.write('<br>')
+        for (let [i, j] of b.entries()) {
+            document.write(i+ '<br>')
+            document.write(j + '<br>')
+        }
+        document.write('<br>')
+        b.forEach((i, j)=>{
+            document.write(i + '<br>')
+            document.write(j + '<br>')
+        })
+
+    </script>
+</body>
+</html>

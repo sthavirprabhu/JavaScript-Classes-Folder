@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Types of Functions in Javascript</h1>
+    <h3>Function Declarations</h3>
+
+    <script>
+        function sayHello(){
+            document.write('Hello World')
+        }
+        sayHello() // Function Calling
+        split()
+
+        function split(){
+            document.write('<br>')
+        }
+
+        function numSquare(a){
+            document.write(a*a)
+        }
+        numSquare(5)
+        split()
+
+        document.write('<h3> Function Expression </h3>')
+        const greet = function (){
+            document.write('Hello')
+        }
+        greet()
+        split()
+
+        const reverseString = function (str){
+            return str.split('').reverse().join('')
+        }
+        document.write(reverseString('Hello World'))
+        split()
+
+        document.write('<h3> Arrow Function </h3>')
+        // Basic syntax: (params) => expression
+        // Single parameter: param => expression
+        // No parameters: () => expression
+        // Returning objects: () => ({ key: value })
+        // Lexical this: Inherits from surrounding scope.
+
+        // Basic Arrow Function
+        const add = (a, b)=> a+b
+        document.write(add(5, 10))
+        split()
+
+        // Single Parameter
+        const s1 = x=>x*x
+        document.write(s1(5))
+        split()
+
+        // No Parameter
+        const s2 = ()=>'Hello World'
+        document.write(s2())
+        split()
+        
+        // Block Body
+        const multiply = (a, b)=>{
+            const result = a*b
+            return result
+        }
+        document.write(multiply(3, 2))
+        split()
+
+        // Impicit Return
+        const double = num=>num*2
+        document.write(double(3))
+        split()
+
+        // Returning an Object
+        const createPerson = (name, age)=>({name, age})
+        document.write(JSON.stringify(createPerson('Sthavir', 14)))
+        split()
+
+        // Lexical This
+        function person(){
+            this.age = 0
+            setInterval(()=>{
+                this.age++
+                document.write(this.age)
+            },3.156e+10) // Set to Increase Every Year
+        }
+        const t = new person()
+        document.write(t)
+        split()
+
+        // Multi-line Arrow Function
+        const divide = (a, b)=>{
+            if (b === 0){
+                throw new Error('Cannot Divide by Zero')
+            }
+            document.write(a/b)
+        }
+        divide(10, 5)
+        split()
+
+        // document.write('<h3> Immediately Invoked Function Expressions (IIFE) </h3>')
+        // (function(){
+        //     console.log('Executing Immediately')
+        // })();
+
+        document.write('<h3> Anonymous Functions </h3>')
+        // setTimeout(function(){
+        //     document.write('This will run after a delay')
+        // },1000)
+
+        function executeCallback (callback){
+            callback()
+        }
+        executeCallback(()=>console.log('Callback'))
+
+    </script>
+</body>
+</html>

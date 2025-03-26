@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        document.write('<h1> Weak Sets </h1>')
+        document.write('<p> Weak Sets are a new object type with ES6 (ECMAScript 2015). A Weak Set is a collection of objects where each object may occur only once. </p>')
+        // Weak Sets are similar to Sets, however, it has less memory and wont store garbage collection
+        // Weak Sets are not iterable, so you cannot loop through them
+        // Weak Sets do not have a size property
+
+        document.write('<p> Creating a Weak Set </p>')
+        let weakSet = new WeakSet()
+        document.write(weakSet + '<br>')
+
+        document.write('<p> Adding Items to a Weak Set </p>')
+        let obj1 = {name: 'Alice'}
+        weakSet.add(obj1)
+        console.log(weakSet) + '<br>'
+        
+        document.write('<p> Checking if an Item is in a Weak Set </p>')
+        document.write(weakSet.has(obj1) + '<br>')
+        document.write(weakSet.has(name) + '<br>')
+
+        document.write('<p> Deleting Items from a Weak Set </p>')
+        weakSet.delete(obj1)
+        document.write(weakSet.has(obj1) + '<br>')
+
+        document.write('<p> Garbage Collection </p>')
+        let obj2 = {name: 'Bob'}
+        weakSet.add(obj2)
+        console.log(weakSet) + '<br>'
+        obj2 = null
+        // OBJ2 can be garbage collected because the weak set does not hold the reference to it
+        console.log(weakSet) + '<br>'
+
+        function createUniqueUser() {
+            let userWeakSet = new WeakSet()
+            return{
+                addUser(user) {
+                    userWeakSet.add(user)
+                },
+                hasUser(user) {
+                    return userWeakSet.has(user)
+                }
+            }
+        }
+        const a = createUniqueUser()
+        let user1 = {name: 'Alice'}
+        let user2 = {name: 'Bob'}
+        a.addUser(user1)
+        document.write(a.hasUser(user1) + '<br>')
+        document.write(a.hasUser(user2) + '<br>')
+        a.addUser(user2)
+        document.write(a.hasUser(user2) + '<br>')
+        user1 = null
+        document.write(a.hasUser(user1) + '<br>') // Even if the variable has no value, it can still be garbage collected
+        document.write(weakSet.size + '<br>')
+        // for (let i of weakSet) {
+        //     document.write(i + '<br>')
+        // }
+
+        document.write('<h1> Weak Maps </h1>')
+        document.write('<p> Weak Maps are a new object type with ES6 (ECMAScript 2015). A Weak Map is a collection of key-value pairs where each key may occur only once. </p>')
+
+        document.write('<p> Creating a Weak Map </p>')
+        let weakMap = new WeakMap()
+        document.write(weakMap + '<br>')
+
+        document.write('<p> Setting a Key Value Pair </p>')
+        let a1 = {}
+        weakMap.set(a1, 'Alice')
+        document.write(weakMap + '<br>')
+
+        document.write('<p> Getting a Value from a Key </p>')
+        document.write(weakMap.get(a1) + '<br>')
+
+        document.write('<p> Checking Existance of a Key </p>')
+        document.write(weakMap.has(a1) + '<br>')
+
+        document.write('<p> Deleting a Key Value Pair </p>')
+        weakMap.delete(a1)
+        document.write(weakMap.has(a1) + '<br>')
+
+        function trackElement() {
+            let weakMap1 = new WeakMap()
+            return {
+                addElement(element, data) {
+                    weakMap1.set(element, data)
+                },
+                getElementData(element) {
+                    return weakMap1.get(element)
+                },
+                hasElementData(element) {
+                    return weakMap1.has(element)
+                },
+                removeElement(element) {
+                    weakMap1.delete(element)
+                }
+            }
+        }
+        const b = trackElement()
+        let element1 = document.createElement('div')
+        b.addElement(element1, {name: 'Alice'})
+        document.write(b.hasElementData(element1) + '<br>')
+        console.log(b.getElementData(element1) + '<br>')
+        element1 = null
+        document.write(b.hasElementData(element1) + '<br>')
+
+    </script>
+</body>
+</html>

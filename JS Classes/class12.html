@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Control Flow</h1>
+    <p>Control Flow in determines the order in which statements are executed</p>
+
+    <h3>1. Conditional Statements</h3>
+    <p>If Else</p>
+    <script>
+        // Check if a number is positive, negative, or zero.
+        let num=5
+        if(num>0){
+            document.write('Positive')
+        }
+        else if(num<0){
+            document.write('Negative')
+        }
+        else{
+            document.write('Zero')
+        }
+
+        let age = 18
+        if(age>=18){
+            document.write('<br>' + 'Eligible')
+        }
+        else{
+            document.write('Not-Eligible')
+        }
+
+        let character = "a"
+        if('aeiouAEIOU'.includes(character)){
+            document.write('Vowel')
+        }
+        else{
+            document.write('Not-Vowel')
+        }
+
+        let score = 99
+        if(score>=90){
+            document.write('Grade A')
+        }
+        else if(score>=80){
+            document.write('Grade B')
+        }
+        else if(score>=70){
+            document.write('Grade C')
+        }
+        else if(score>=60){
+            document.write('Grade D')
+        }
+        else{
+            document.write('Work Harder')
+        }
+
+        let number = 235
+        if(number%2==0){
+            document.write('Even')
+        }
+        else{
+            document.write('Odd')
+        }
+
+        let year = 2025
+        if(year%4==0){
+            document.write('Leap Year')
+        }
+        else{
+            document.write('Not-Leap Year')
+        }
+
+        let a = 76
+        let b = 20
+        let c = 100
+        if(a>b&c){
+            document.write('A is greater')
+        }
+        else if(b>a&c){
+            document.write('B is greater')
+        }
+        else{
+            document.write('C is greater')
+        }
+
+        let string = ''
+        if(string===''){
+            document.write('String is empty')
+        }
+        else{
+            document.write('String is not empty')
+        }
+
+        let day = 'monday'
+        if('mondaytuesdaywednesdaythursdayfridayMONDAYTUESDAYWEDNESDAYTHURSDAYFRIDAYMondayTuesdayWednesdayThursdayFriday'.includes(day)){
+            document.write('Its a WeekDay')
+        }
+        else if('sundaysaturdaySUNDAYSATURDAYSundaySaturday'.includes(day)){
+            document.write('Its a Weekend')
+        }
+    </script>
+
+    <p>Switch Statement</p>
+    <script>
+        let day1;
+        switch(new Date().getDay()){
+            case 0: day1 = 'Sunday'
+            break 
+            case 1: day1 = 'Monday'
+            break 
+            case 2: day1 = 'Tuesday'
+            break 
+            case 3: day1 = 'Wednesday'
+            break 
+            case 4: day1 = 'Thursday'
+            break 
+            case 5: day1 = 'Friday'
+            break 
+            case 6: day1 = 'Saturday'
+        }
+        document.write(`Todays day is ${day1}`)
+
+        let score1 = 98
+        switch(true){
+            case (score1 >= 90):
+                document.write('Grade A')
+                break;
+            case (score1 >= 80):
+                document.write('Grade B')
+                break;
+            case (score1 >= 70):
+                document.write('Grade C')
+                break;
+            case (score1 >= 60):
+                document.write('Grade D')
+                break;
+            default:
+                document.write("Grade F")
+
+        }
+
+        let month;
+        switch(new Date().getMonth()){
+            case 0: month = 'January'
+            break
+            case 1: month = 'February'
+            break
+            case 2: month = 'March'
+            break
+            case 3: month = 'April'
+            break
+            case 4: month = 'May'
+            break
+            case 5: month = 'June'
+            break
+            case 6: month = 'July'
+            break
+            case 7: month = 'August'
+            break
+            case 8: month = 'September'
+            break
+            case 9: month = 'October'
+            break
+            case 10: month = 'November'
+            break
+            case 11: month = 'December'
+            break
+        }
+        document.write(`Current Month is ${month}`)
+
+        let trafficLightColor = 'Red'
+        switch(trafficLightColor){
+            case 'Red': document.write('STOP') 
+            break
+            case 'Yellow': document.write('WAIT') 
+            break
+            case 'Green': document.write('GO') 
+            break
+            default: document.write('NAN')
+        }
+
+        // let operator = prompt('Enter Your Operation');;
+        // let num1 = parseInt(prompt('Enter Your First Number'));
+        // let num2 = parseInt(prompt('Enter Your Second Number'));;
+        // switch (operator) {
+        //     case "addition":
+        //         document.write(num1+num2)
+        //         break
+        //     case "subtraction":
+        //         document.write(num1-num2)
+        //         break
+        //     case "multiplication":
+        //         document.write(num1*num2)
+        //         break
+        //     case "division":
+        //         document.write(num1/num2)
+        //         break
+        //     default:
+        //         document.write("Invalid Operator")
+        // }
+    </script>
+</body>
+</html>

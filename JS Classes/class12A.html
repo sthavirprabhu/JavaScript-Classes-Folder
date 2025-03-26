@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>For Loop</h1>
+    <p>Print all the numbers from 1 - 10</p>
+    <script>
+        for (let i = 2; i<=10; i+=2){
+            document.write(i + '<br>')
+        }
+
+        document.write('<p> Calculate the sum of the first N natural numbers where N is provided by the user. </p>')
+        let N = 10
+        let sum = 0
+        for (let i = 1; i<=N; i++){
+            sum+=i
+        }
+        document.write(sum + '<br>')
+
+        document.write('<p> Print the multiplication table of a number provided by the user. </p>')
+        let num = 5 // parseInt(prompt('Enter Your Number'))
+        for (let i = 1; i<=10; i++){
+            document.write(`${num} * ${i} = ${num*i} <br>`)
+        }
+
+        document.write('<p> Create Var Fruits and Store fRUIT </p>')
+        var fruits = ['apple', 'banana', 'pear']
+        for (let i = 0; i<=fruits.length-1; i++){
+            document.write(fruits[i] + '<br>')
+        }
+
+        document.write('<h1> While Loop </h1>') // Its a loop that never stops until a condition is met
+        var i = 1
+        while (i<=10){
+            document.write(i)
+            i++
+        }
+
+        let N1 = 10
+        let sum1 = 0
+        let i1 = 1
+        while (i1<=N1){
+            sum1+=i1
+            i1++
+        }
+        document.write('<br>' + sum1)
+
+        // Sum of Even Numbers
+        let total = 0
+        let a = 1
+        while (a<=10){
+            if(a%2===0){
+                total+=a
+            }
+            a+=1
+        }
+        document.write('<br>' + total)
+
+        document.write('<h1> DO...While Loop </h1>')
+        let j = 1
+        do{
+            document.write(`<br> ${j}`)
+            j++
+        }
+        while(j<=10)
+
+        let N3 = 8
+        let sum2 = 0
+        let b = 1
+        do{
+            sum2+=b
+            b++
+        }
+        while(b<=N3)
+        document.write('<br>' + sum2)
+
+        let num2;
+        do{
+            // num2 = parseInt(prompt("Enter a positive number"))
+        }
+        while(num2<0)
+        document.write('<br><br>' + 'It is a positive number')
+
+        // let prenum = 4
+        // let guess;
+        // do{
+            // guess = parseInt(prompt("Enter a guess"))
+        //     if(guess==prenum){
+        //         document.write('<br>' + "You have Guessed Correctly")
+        //     }
+        // }
+        // while(guess!== prenum)
+
+        document.write('<h1> For...Of Loop </h1>')
+
+        let arr = [1, 2, 3, 4, 5]
+        for (let i of arr){
+            document.write(i + '<br>')
+        }
+
+        let prices = [10.99, 5.49, 3.25]
+        let totalprice = 0
+        for (let i of prices){
+            totalprice+=i
+        }
+        document.write('<br>' + totalprice)
+
+        let product = 0
+        for (let i of arr){
+            document.write('<br>' + i*i + '<br>')
+        }
+
+        let words = ["Hello", "World", "from", "JavaScript"];
+        for (let i of words){
+            document.write(i + ' ')
+        }
+
+        let str = "JavaScript is awesome!";
+        let count = 0
+        for (let i of str){
+            if('a'===i){
+                count+=1
+            }
+        }
+        document.write('<br>' + count + '<br>')
+
+        let arr2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+        let arr3 = []
+        for (let i of arr2){
+            if(i%2==0){
+                arr3.push(i)
+            }
+        }
+        document.write(arr3)
+
+        document.write('<h1> For-In Loop </h1>')
+
+        let ages = { John: 30, Jane: 25, Jim: 40 };
+        for (let i in ages){
+            document.write(i)
+        }
+
+        let sum3 = 0
+        for (let i in ages){
+            sum3+=ages[i]
+        }
+        document.write(sum3)
+
+        let car = { brand: "Toyota", model: "Camry", year: 2020 };
+        let sum4 = 0
+        for (let i in car){
+            sum4++
+        }
+        document.write('<br>' + sum4)
+
+        let book = { title: "1984", author: "George Orwell", year: 1949 }
+        for (let i in book){
+            document.write(i + ': ' + book[i])
+        }
+
+        let scores = { math: 87, english: 92, science: 78, history: 90 };
+        let max = 0
+        for (let i in scores){
+            if(scores[i]>max){
+                max=scores[i]
+            }
+        }
+        document.write(`The highest score is ${max}`)
+    </script>
+</body>
+</html>

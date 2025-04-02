@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const area = prompt("Enter the specific number for the area you want to find: \n 1 - Area of Square \n 2 - Area of Rectangle \n 3 - Area of Triangle \n 4 - Area of Circle")
+
+        if (area == 1){
+            const num1Square = parseInt(prompt("Enter your side length"))
+            let result1 = Number(num1Square)*Number(num1Square)
+            alert(`The area of your square is ${result1} units`)
+        }
+        if (area == 2){
+            const num1Rectangle = parseInt(prompt("Enter your length"))
+            const num2Rectangle = parseInt(prompt("Enter your breadth"))
+            let result2 = Number(num1Rectangle)*Number(num2Rectangle)
+            alert(`The area of your rectangle is ${result2} units`)
+        }
+        if (area == 3){
+            const num1Triangle = parseInt(prompt("Enter your height"))
+            const num2Triangle = parseInt(prompt("Enter your base"))
+            let result3 = Number(num1Triangle)*Number(num2Triangle)
+            alert(`The area of your triangle is ${result3} units`)
+        }
+        if (area == 4){
+            const num1Circle = parseInt(prompt("Enter your radius"))
+            let result4 = Number(num1Circle)*Number(num1Circle)*3.14
+            alert(`The area of your circle is ${result4} units`)
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="result"></p>
+    <p id="result1"></p>
+    <p id="demo"></p>
+    <p id="result2"></p>
+    <p id="number_result"></p>
+    <p id="string_result"></p>
+
+    <script>
+        function split(){
+            document.write('<br>')
+        }
+
+        let myObj = { name: "Riya", age: 12, grade: 7 };
+        let myJSON = JSON.stringify(myObj);
+        document.write(myJSON)
+        let newObj = JSON.parse(myJSON)
+        document.getElementById("result").innerHTML = newObj.name
+    
+        async function add(a,b) {
+            let response = await a + b
+            display(response)
+        }
+        function display(some) {
+            document.getElementById("result1").innerHTML = some;
+        }
+        add(5,20)
+
+        function myDisPlayer(some) {
+            document.getElementById("demo").innerHTML = some;
+        }
+        function sum(a,b){
+            var sum = a+b
+            myDisPlayer(sum)
+        }
+        let myPromise = new Promise(function(myResolve, myReject) {
+            let x = 0
+
+            if(x == 0){
+                myResolve ("OK")
+            } else {
+                myReject("Error")
+            }
+
+        })
+
+        myPromise.then(
+            function(value) {sum(5,5)},
+            function(error) {sum(error)}
+        )
+
+        function myDisPlayer1(value) {
+            document.getElementById("result2").innerHTML = value
+        }
+        function myCalculator(num1, num2, myCallback) {
+            let num = num1 + num2
+            myCallback(sum)
+        }
+        myCalculator(5, 5, myDisPlayer)
+
+        let x = 70
+        let y = 90
+        document.getElementById("number_result").innerHTML = x+y;
+        document.getElementById("string_result").innerHTML = String(x) + String(y)
+    </script>
+
+    <h1>Try, Catch Block</h1>
+    <Script>
+        function divide(a, b) {
+            try {
+                if (b === 0) {
+                    throw new Error("Cannot divide by Zero")
+                }
+                return a / b
+            }
+            catch (error){
+                document.write("Error: ", error.message, '; ')
+            }
+            finally {
+                console.log("Execution Completed")
+            }
+        }
+        document.write(divide(20, 0) + '<br>')
+
+        function squareRoot(num1){
+            try {
+                if (num1<0){
+                    throw new Error("Enter a Positive Number")
+                }
+                return Math.sqrt(num1)
+            }
+            catch (error) {
+                document.write("Error: ", error.message, '; ')
+            }
+            finally {
+                console.log("Execution Completed")
+            }
+        }
+        document.write(squareRoot(25))
+
+        class mobile{
+            constructor(screen, camera, sensor){
+                this.screen = screen,
+                this.camera = camera,
+                this.sensor = sensor
+            }
+            display(){
+                document.write('<br>', this.screen, ', ', this.camera, ', ', this.sensor)
+            }
+        }
+
+        // Syntax (Creating an Object): objectName = new className()
+        mobile1 = new mobile("65 Inch Screen", 3, 4)
+
+        // Syntax (Calling a Function): objectName.functionName ()
+        mobile1.display()
+
+        class Book{
+            constructor(title, author, year){
+                this.bookTitle = title,
+                this.bookAuthor = author,
+                this.bookYear = year
+            }
+            getBookInfo(){
+                document.write(`<br> The name of this book is ${this.bookTitle} and it was written by author ${this.bookAuthor} in the year, ${this.bookYear}`)
+            }
+        }
+        bookInfo = new Book("Harry Potter", "J.K Rowling", 2002)
+        bookInfo.getBookInfo()
+        split()
+
+        class Circle{
+            constructor(radius){
+                this.radius = radius
+            }
+            areaOfCircle(){
+                document.write(`The area of the circle is ${this.radius*this.radius*3.14}`)
+            }
+        }
+        circle1 = new Circle(5)
+        circle1.areaOfCircle()
+        split()
+
+        </script>
+
+        <p id="d">0</p>
+        <button id="a" >Increase Count</button>
+        <button id="b" >Decrease Count</button>
+        <button id="c" >Get Current Count</button>
+
+        <script>
+
+        class Counter{
+            constructor(count){
+                this.count = 0
+            }
+            incrementCount(){
+                this.count++
+                document.getElementById("d").innerHTML = this.count
+            }
+            decrementCount(){
+                this.count--
+                document.getElementById("d").innerHTML = this.count
+            }
+            getCurrentCount(){
+                document.getElementById("d").innerHTML = this.count
+            }
+        }
+        const counter = new Counter()
+        split()
+
+        document.getElementById("a").onclick = ()=>counter.incrementCount()
+        document.getElementById("b").onclick = ()=>counter.decrementCount()
+        document.getElementById("c").onclick = ()=>counter.getCurrentCount()
+
+        </script>
+        
+        <p id="Result">0</p>
+        <button id="Add">Add</button>
+        <button id="Sub">Subtract</button>
+        <button id="Mul">Multiply</button>
+        <button id="Div">Divide</button>
+        
+        <script>
+
+        class Calculator{
+            constructor(){
+                this.num1 = 10,
+                this.num2 = 2,
+                this.result = 0
+            }
+            addNum(num1, num2){
+                this.result = this.num1+this.num2
+                document.getElementById("Result").innerHTML = this.result 
+            }
+            subtractNum(){
+                this.result = this.num1-this.num2
+                document.getElementById("Result").innerHTML = this.result
+            }
+            multiplyNum(){
+                this.result = this.num1*this.num2
+                document.getElementById("Result").innerHTML = this.result
+            }
+            divideNum(){
+                this.result = this.num1/this.num2
+                document.getElementById("Result").innerHTML = this.result
+            }
+        }
+        const calculator = new Calculator()
+        split()
+
+        document.getElementById("Add").onclick = ()=>calculator.addNum()
+        document.getElementById("Sub").onclick = ()=>calculator.subtractNum()
+        document.getElementById("Mul").onclick = ()=>calculator.multiplyNum()
+        document.getElementById("Div").onclick = ()=>calculator.divideNum()
+
+    </Script>
+    
+</body>
+</html>

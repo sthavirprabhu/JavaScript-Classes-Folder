@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Error Handling: </h1>
+    <Script>
+        // async function fetchData(url) {
+        //     try {
+        //         const response = await fetch(url)
+        //         if (!response.ok) {
+        //             throw new Error('Network Response Failed')
+        //         }
+        //         const data = await response.json()
+        //         return data;
+        //     } catch (error) {
+        //         document.write("Fetch Error: ", error.message, '; ')
+        //     }
+        // }
+
+        // fetchData('https://jsonplaceholder.typicode.com/posts/1').then(data => {
+        //     document.write(JSON.stringify(data))
+        // })
+
+        document.write('<p> Throwing Custom Errors: Write a function that takes a string and throws an error if the string is empty, using a try-catch block to handle this error. </p>')
+        async function string(str){
+            try {
+                if (str === ''){
+                    throw new Error('String is Empty')
+                }
+                return "Input is Valid"
+            } catch (error) {
+                document.write("Error: ", error.message, '; ')
+            }
+        }
+        document.write(string(''))
+
+        document.write('<p> Write a function that attempts to read a file (simulate with a random boolean). Use try-catch to log an error message if it fails. </p>')
+        function readFile(filename) {
+            try {
+                if (Math.random() < 0.5){
+                    throw new Error('Failed to read File')
+                }
+                return "File Data"
+            } catch (error) {
+                document.write("Error: ", error.message, "; ")
+            }
+        }
+        document.write(readFile("classes/test.txt"))
+
+    </Script>
+
+    <Script>
+        function validateForm(){
+            let x = document.forms["myForm"]["fname"].value;
+            if (x == "") {
+                alert("Name must be filled out")
+                return false
+            }
+            else document.write("Name Submitted")
+        }
+    </Script>
+
+    <form name="myForm" onsubmit="validateForm()">
+        Name: <input type="text" name="fname">
+        <input type="submit" value="Submit">
+        <p id="message"></p>
+    </form>
+</body>
+</html>

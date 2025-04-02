@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        document.write('<h3> Function Declaration: Write a function declaration named subtract that takes two parameters and returns their difference. </h3>')
+        function subtract(a, b){
+            return a-b
+        }
+        document.write(subtract(10, 5)+'<br>')
+
+        document.write('<h3> Function Expression: Create a function expression named multiply that takes two numbers and returns their product. </h3>')
+        const multiply = function(a, b){
+            return a*b
+        }
+        document.write(multiply(5, 10)+'<br>')
+
+        document.write('<h3> Arrow Function with Implicit Return: Write an arrow function named square that returns the square of a given number. </h3>')
+        let square = x => x*x
+        document.write(square(5)+'<br>')
+
+        document.write('<h3> Arrow Function with Explicit Return: Create an arrow function named divide that takes two parameters and returns their quotient. Ensure it uses curly braces and an explicit return statement. </h3>')
+        let divide = (a, b) => {
+            return a/b
+        }
+        document.write(divide(10, 2)+'<br>')
+
+        document.write('<h3> Anonymous Function: Define an anonymous function that logs "Hello, World!" to the console and assign it to a variable named greet. </h3>')
+        let greet = function(){
+            console.log('Hello, World!')
+        }
+        greet()
+
+        document.write('<h3> Using this in a Regular Function: Create an object called car with a property speed and a method accelerate that uses a regular function to increase the speed. </h3>')
+        let car = {
+            speed: 0,
+            accelerate: function(){
+                this.speed += 10
+                document.write(this.speed+'<br>')
+            }
+        }
+        car.accelerate()
+
+        document.write('<h3> Using this in an Arrow Function: Modify the car object from the previous question to use an arrow function for the accelerate method, and observe how this behaves. </h3>')
+        let car2 = {
+            speed: 0,
+            accelerate: ()=>{
+                this.speed += 10
+                document.write(this.speed+'<br>')
+            }
+        }
+        car2.accelerate()
+
+        document.write('<h3> Higher-Order Function: Write a function named applyOperation that takes two numbers and a callback function as parameters, applies the callback to the numbers, and returns the result. </h3>')
+        function applyOperation(a, b, callback){
+            return callback(a, b)
+        }
+        let add = (a, b) => a+b
+
+        document.write('<h3> Self-Invoking Function: Create a self-invoking function that calculates and logs the factorial of a number (e.g., 5). </h3>')
+        (function(){
+            let fact = 1
+            let n = 5
+            for(let i=1; i<=n; i++){
+                fact *= i
+            }
+            document.write(fact+'<br>')
+        })()
+
+        document.write('<h3> Generator Function: Write a generator function named genFibonacci that yields the Fibonacci sequence numbers until a specified count. </h3>')
+        function* genFibonacci(count){
+            let a = 0
+            let b = 1
+            let c = 0
+            for(let i=0; i<count; i++){
+                yield c
+                a = b
+                b = c
+                c = a+b
+            }
+        }
+        let fib = genFibonacci(10)
+    
+    </script>
+</body>
+</html>
